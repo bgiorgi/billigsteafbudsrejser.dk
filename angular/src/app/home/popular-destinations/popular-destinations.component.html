@@ -1,0 +1,3 @@
+<mat-list>
+ <mat-list-item *ngFor="let destination of destinations?.data"><a routerLink="tour-list" [queryParams]="{destination: destination.city}" class="gray-text">{{ destination.city}}, {{ destination.country }}</a></mat-list-item>
+</mat-list>

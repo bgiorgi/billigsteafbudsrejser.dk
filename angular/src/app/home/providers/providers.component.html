@@ -1,0 +1,6 @@
+<div fxLayout="row wrap" fxLayoutAlign="space-around center" class="text-left" fxLayout.xs="column" fxFlexFill>
+    <div fxFlex="10" class="search-card-container" *ngFor="let provider of providers?.data">
+        <a routerLink="tour-list" [queryParams]="{provider_id: provider.id}"><img src="{{ provider.logo }}" class="home-provider-logo"></a>
+    </div>
+</div>
+            

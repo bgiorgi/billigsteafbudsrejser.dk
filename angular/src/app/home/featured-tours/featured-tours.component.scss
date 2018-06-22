@@ -1,0 +1,18 @@
+.search-card-container {
+  padding: 2rem;
+}
+
+.service-star {
+    color: #FFC107;
+    font-size: .9rem;
+    top: .2rem;
+    position: relative;
+}
+
+
+// mobile
+@media (max-width: 500px) {
+.search-card-container {
+  padding: 0;
+}
+}

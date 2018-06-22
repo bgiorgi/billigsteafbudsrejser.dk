@@ -1,0 +1,102 @@
+<div class="main-container mat-elevation-z3 p-3 pt-6 pb-4">
+    <div class="logo-container">
+        <h5>billigste afbudsrejser</h5>
+    </div>
+
+
+    <!--search form container-->
+    <div class="container-fluid">
+        <!--search form-->
+        <form action="tour-list" class="search-form w-100" method="get" (ngSubmit)="onSubmit()">
+            <!--large inputs for destination and departure date-->
+            <div fxLayout="row wrap" fxLayoutAlign="left" class="text-left large-input-container mb-2" fxLayout.xs="column" fxFlexFill>
+                <div class="pr-5 py-2 float-left large-input-container text-left" fxFlex="10" fxFlex.sm="30" fxFlexOffset.md="10px">
+                    <input i18n-placeholder="@@personsCount" class="large-input large-input-number mat-elevation-z4" name="number_of_persons" placeholder="Persons" type="number" [(ngModel)]="params.number_of_persons">
+                    <mat-icon matSuffix class="input-icon">people</mat-icon>
+                </div>
+
+
+                <div class="pr-5 py-2 float-left large-input-container text-left" fxFlex="45" fxFlex.sm="70" fxFlexOffset.md="10px">
+                    <input i18n-placeholder="@@departureDate" class="large-input mat-elevation-z4" name="departure_date" placeholder="Departure Date" [matDatepicker]="picker" (click)="picker.open()" [(ngModel)]="params.departure_date">
+                    <mat-icon matSuffix class="input-icon">calendar_today</mat-icon>
+                    <mat-datepicker #picker></mat-datepicker>
+                </div>
+            </div>
+            <!--/large inputs for destination and departure date-->
+
+            <!--secondary field container-->
+            <div fxLayout="row wrap" fxLayoutAlign="space-around center" class="text-left" fxLayout.xs="column" fxFlexFill>
+                <div class="secondary-fields-container text-left" fxFlex="100" fxFlexOffset="20px">
+                    <!--flexible departure select-->
+                    <ng-container i18n="@@departureFlexibility">Flexible departure</ng-container>
+                    <select name="flexible_departure" class="flexible-departure-select" [(ngModel)]="params.flexible_departure">
+                            <option i18n="@@1week" value="7">1 Week</option>
+                            <option i18n="@@2weeks" value="14">2 Weeks</option>
+                            <option i18n="@@3weeks" value="21">3 Weeks</option>
+                        </select>
+                    <!--/flexible departure select-->
+                </div>
+            </div>
+            <!--/secondary field container-->
+
+            <!--search button-->
+            <div fxLayout="row wrap" fxLayoutAlign="space-around center" class="text-left" fxLayout.xs="column" fxFlexFill>
+                <div class="text-left pt-4" fxFlex="100" fxFlexOffset="20px">
+                    <button i18n mat-raised-button color="primary" class="search-button" type="submit">{searching, select, 0 {search} 1 {searching...}}</button>
+                </div>
+            </div>
+            <!--/search button-->
+        </form>
+        <!--/search form-->
+    </div>
+    <!--/search form container-->
+
+</div>
+
+
+
+<div class="container mt-4">
+    <!--featured tours-->
+    <div class="featured-tours">
+        <h1>Featured Tours</h1>
+        <div class="featured-tours-inner my-4 py-4">
+            <h2 i18n>Most Popular</h2>
+            <app-featured-tours [tourType]="'popular'" [tourOrder]="'popularity'"></app-featured-tours>
+        </div>
+
+        <div class="featured-tours-inner my-4 py-4">
+            <h2 i18n>Cheapest</h2>
+            <app-featured-tours [tourType]="'cheapest'" [tourOrder]="'price'"></app-featured-tours>
+        </div>
+
+        <div class="featured-tours-inner my-4 py-4">
+            <h2 i18n>Closest</h2>
+            <app-featured-tours [tourType]="'closest'" [tourOrder]="'date'"></app-featured-tours>
+        </div>
+    </div>
+    <!--featured tours-->
+
+    <!--providers-->
+    <div class="providers my-4">
+        <app-providers class="my-4"></app-providers>
+        <hr class="my-4 provider-divider">
+    </div>
+    <!--providers-->
+
+    <!--popular destinations-->
+    <div class="popular-destinations my-4">
+        <h3 i18n>Popular Destinations</h3>
+        <app-popular-destinations class="my-4"></app-popular-destinations>
+    </div>
+    <!--popular destinations-->
+</div>
+
+
+<footer class="py-4">
+    <a routerLink="/en" class="gray-text mr-2"><img style="width:15px" class="mr-1" src="http://aws-cf.imdoc.fr/prod/articles/3/5/0/5788350/4321013/big-432101389c.jpg?v=0"> <small>English</small></a>
+    <a routerLink="/da" class="gray-text"><img style="width:15px" class="mr-1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Flag_of_Denmark.svg/20px-Flag_of_Denmark.svg.png"> <small>Dansk</small></a>
+    <br><br>
+    <small class="copyright">Copyright © 2018. billigsteafbudsrejser</small>
+    <br>
+    <small i18n class="copyright">All rights reserved!</small>
+</footer>

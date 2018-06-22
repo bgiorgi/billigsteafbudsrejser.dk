@@ -1,0 +1,30 @@
+<div fxLayout="row wrap" fxLayoutAlign="start center" class="text-left" fxLayout.xs="column" fxFlexFill>
+    <div fxFlex="20" fxFlex.xs="100" fxFlex.sm="50" fxFlex.md="30" fxFlex.lg="25" class="search-card-container" *ngFor="let variation of tours?.data" [ngClass]="{ 'fade': isLoading }">
+        <mat-card class="tour-card">
+            <a href="{{ redirectUrl(variation.tour.id,variation.id) }}" target="blank">
+            <img mat-card-image src="{{ variation.tour.image_url }}">
+            </a>
+            <div class="provider-logo mat-elevation-z1">
+                <img src="{{ variation.tour.provider.logo }}">
+            </div>
+
+            <mat-card-content>
+                <p>
+                    <span class="hotel">{{ variation.departure_date | date:"MMM d" }} +{{ variation.duration }} <ng-container i18n="@@dayPlural">{variation?.duration, select, 1 {day} other {days}}</ng-container></span>  &nbsp;  <span class="from">{{ variation?.number_of_persons }} <ng-container i18n="@@personPlural">{variation.number_of_persons, select, 1 {person} other {persons}}</ng-container></span>
+                    <span class="price">{{ variation.tour.currency }} {{ variation.tour.price }}</span>
+                    <br>
+                    <span class="destination">{{ variation.tour.city }}</span> &nbsp; <span class="from">{{ variation.tour.country }}</span>
+                    <br>
+                    <span class="hotel">{{ variation.tour.name }}</span>  
+                    <br>
+                    <span class="hotel">{{ variation.tour.service_type }}</span> <span class="stars ml-2 font-thin">{{ variation.tour.stars }}<mat-icon class="service-star">star</mat-icon></span>
+                    <br>
+                </p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<div *ngIf="tours?.data && !tours.data.length"><h1 i18n="@@nothingFound">Nothing Found</h1></div>
+<div infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()"></div>
+<div align="center"  *ngIf="isAppending"><mat-spinner></mat-spinner></div>

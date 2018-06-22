@@ -1,0 +1,42 @@
+.search-form-container {
+  top: 50%;
+  position: relative;
+  transform: translateY(50%);
+  .short-input {
+    width: 70px
+  }
+}
+
+.sidebar-footer {
+  bottom: 2rem;
+  position: absolute;
+  .copyright {
+    font-weight: 100;
+    font-size: .6rem;
+  }
+}
+
+
+
+
+
+
+
+
+.logo-container {
+  padding: .3rem 1rem;
+  background: #ffeb39;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: black;
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+}
+
+
+
+small mat-icon {
+  font-size: .8rem;
+}

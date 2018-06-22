@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="personsCount" datatype="html">
+        <source>Persons</source>
+        <target>Personer</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/home.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="departureDate" datatype="html">
+        <source>Departure Date</source>
+        <target>Afgangsdato</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/home.component.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/bottom-sheet/bottom-sheet.component.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/sidebar/sidebar.component.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="departureFlexibility" datatype="html">
+        <source>Flexible departure</source>
+        <target>Fleksibel afgang</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/home.component.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1week" datatype="html">
+        <source>1 Week</source>
+        <target>1 Uge</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/home.component.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2weeks" datatype="html">
+        <source>2 Weeks</source>
+        <target>2 Uger</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/home.component.ts</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3weeks" datatype="html">
+        <source>3 Weeks</source>
+        <target>3 Uger</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/home.component.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="12b42564d6c241911260a031b4c8656274954c61" datatype="html">
+        <source>{VAR_SELECT, select, searching {searching...} other {search} }</source>
+        <target>{VAR_SELECT, select, searching {Søger...} other {Søg} }</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/home.component.ts</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ae5a2ec602602cfc1ebf8de031cffc8149b130d5" datatype="html">
+        <source>Most Popular</source>
+        <target>Mest populære</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/home.component.ts</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="baa36f06d1777bd970af6fa905b4fba6d6d339ea" datatype="html">
+        <source>Cheapest</source>
+        <target>Billigste</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/home.component.ts</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="47ee86021240f6e4776a64ff2c105b762e8cb93c" datatype="html">
+        <source>Closest</source>
+        <target>Nærmeste</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/home.component.ts</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cfbc2fe74acbeb7378c406e4b8f413a49d65ea6b" datatype="html">
+        <source>Popular Destinations</source>
+        <target>Populære rejsemål</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/home.component.ts</context>
+          <context context-type="linenumber">88</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f69403513228649f0db0953af8dcb008d0450a0c" datatype="html">
+        <source>All rights reserved!</source>
+        <target>Alle rettigheder forbeholdes!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/home.component.ts</context>
+          <context context-type="linenumber">98</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="273401819238e72d16213b90c247eb5d63d95f5b" datatype="html">
+        <source>See All</source>
+        <target>Se alt</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/featured-tours/featured-tours.component.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchFilters" datatype="html">
+        <source>Search Filters</source>
+        <target>Søg filtre</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/bottom-sheet/bottom-sheet.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/sidebar/sidebar.component.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="persons" datatype="html">
+        <source>Persons</source>
+        <target>Personer</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/bottom-sheet/bottom-sheet.component.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/sidebar/sidebar.component.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="flexibleDeparture" datatype="html">
+        <source>Flexible Departure</source>
+        <target>Fleksibel Afgang</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/bottom-sheet/bottom-sheet.component.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/sidebar/sidebar.component.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a7369891e88cd613e45a39b55a282c97776d05f5" datatype="html">
+        <source>Destination</source>
+        <target>Bestemmelsessted</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/bottom-sheet/bottom-sheet.component.ts</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/sidebar/sidebar.component.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <note priority="1" from="description">destination</note>
+      </trans-unit>
+      <trans-unit id="max" datatype="html">
+        <source>Max</source>
+        <target>Max</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/bottom-sheet/bottom-sheet.component.ts</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/bottom-sheet/bottom-sheet.component.ts</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/sidebar/sidebar.component.ts</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/sidebar/sidebar.component.ts</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="min" datatype="html">
+        <source>Min</source>
+        <target>Min</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/bottom-sheet/bottom-sheet.component.ts</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/sidebar/sidebar.component.ts</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1298c1d2bbbb7415f5494e800f6775fdb70f4df6" datatype="html">
+        <source>Filters</source>
+        <target>Filtre</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/tour-list.component.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="noMoreTours" datatype="html">
+        <source>No more tours to show</source>
+        <target>Ingen flere ture at vise</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/items/snackbar/snackbar.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nothingFound" datatype="html">
+        <source>Nothing Found</source>
+        <target>Intet fundet</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/items/items.component.ts</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1feb210f447e10eb214f2e184264d6e05b282959" datatype="html">
+        <source>date</source>
+        <target>dato</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/sorting/sorting.component.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f5e6255be7cd5cb3f90a318ccc46c9ba930d4f06" datatype="html">
+        <source>price</source>
+        <target>pris</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/sorting/sorting.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="696621b2e9420c582fd3eda7dc743834b9c2bb4b" datatype="html">
+        <source>popularity</source>
+        <target>popularitet</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/sorting/sorting.component.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="sortBy" datatype="html">
+        <source>Sort By</source>
+        <target>Sorter efter</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/sorting/sorting.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+            <trans-unit id="dayPlural" datatype="html">
+        <source>{VAR_PLURAL, plural, =1 {day} other {days} }</source>
+        <target>{VAR_PLURAL, plural, =1 {dag} other {dage} }</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/featured-tours/featured-tours.component.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/items/items.component.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+            <trans-unit id="personPlural" datatype="html">
+        <source>{VAR_PLURAL, plural, =1 {person} other {persons} }</source>
+        <target>{VAR_PLURAL, plural, =1 {person} other {personer} }</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/featured-tours/featured-tours.component.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/items/items.component.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
