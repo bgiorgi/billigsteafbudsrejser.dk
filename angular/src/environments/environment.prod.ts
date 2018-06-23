@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://back.billigsteafbudsrejser.dk'
+  apiUrl: 'https://billigsteafbudsrejser.dk/back'
 };
