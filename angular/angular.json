@@ -52,12 +52,10 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.prod.ts"
+              }],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -68,40 +66,38 @@
               "vendorChunk": false,
               "buildOptimizer": true
             },
-            
-              "da": {
-    "aot": true,
-    "outputPath": "dist/my-project-da/",
-    "i18nFile": "src/locale/messages.da.xlf",
-    "i18nFormat": "xlf",
-    "i18nLocale": "da",
-    
-  },
 
-  "production-da": {
-    "fileReplacements": [
-      {
-        "replace": "src/environments/environment.ts",
-        "with": "src/environments/environment.prod.ts"
-      }
-    ],
-    "optimization": true,
-    "outputHashing": "all",
-    "sourceMap": false,
-    "extractCss": true,
-    "namedChunks": false,
-    "aot": true,
-    "extractLicenses": true,
-    "vendorChunk": false,
-    "buildOptimizer": true,
-    "outputPath": "dist/my-project-da/",
-    "i18nFile": "src/locale/messages.da.xlf",
-    "i18nFormat": "xlf",
-    "i18nLocale": "da",
-    "i18nMissingTranslation": "error"
-  }
-  
-  
+            "da": {
+              "aot": true,
+              "outputPath": "dist/my-project-da/",
+              "i18nFile": "src/locale/messages.da.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "da",
+
+            },
+
+            "production-da": {
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.prod.ts"
+              }],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "outputPath": "dist/my-project-da/",
+              "i18nFile": "src/locale/messages.da.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "da",
+              "i18nMissingTranslation": "error"
+            }
+
+
           }
         },
         "serve": {
