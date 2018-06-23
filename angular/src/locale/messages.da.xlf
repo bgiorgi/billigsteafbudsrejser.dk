@@ -275,6 +275,22 @@
           <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
+            <trans-unit id="featuredTours" datatype="html">
+        <source>Featured Tours</source>
+        <target>Udvalgte ture</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/home.component.ts</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+       <trans-unit id="searchButton" datatype="html">
+        <source>{VAR_SELECT, select, searching {searching...} other {search} }</source>
+        <target>{VAR_SELECT, select, searching {Søger...} other {Søg} }</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/home.component.ts</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>

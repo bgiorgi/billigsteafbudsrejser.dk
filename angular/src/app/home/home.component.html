@@ -42,7 +42,7 @@
             <!--search button-->
             <div fxLayout="row wrap" fxLayoutAlign="space-around center" class="text-left" fxLayout.xs="column" fxFlexFill>
                 <div class="text-left pt-4" fxFlex="100" fxFlexOffset="20px">
-                    <button i18n mat-raised-button color="primary" class="search-button" type="submit">{searching, select, 0 {search} 1 {searching...}}</button>
+                    <button i18n="@@searchButton" mat-raised-button color="primary" class="search-button" type="submit">{searching, select, 0 {search} 1 {searching...}}</button>
                 </div>
             </div>
             <!--/search button-->
@@ -58,7 +58,7 @@
 <div class="container mt-4">
     <!--featured tours-->
     <div class="featured-tours">
-        <h1>Featured Tours</h1>
+        <h1 i18n="@@featuredTours">Featured Tours</h1>
         <div class="featured-tours-inner my-4 py-4">
             <h2 i18n>Most Popular</h2>
             <app-featured-tours [tourType]="'popular'" [tourOrder]="'popularity'"></app-featured-tours>

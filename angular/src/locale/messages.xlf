@@ -76,11 +76,18 @@
           <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="e59f5d6b6fa23dbf557f5cadd2eba6cd2a1c14c1" datatype="html">
+      <trans-unit id="searchButton" datatype="html">
         <source>{VAR_SELECT, select, 0 {search} 1 {searching...} }</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/home/home.component.ts</context>
           <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="featuredTours" datatype="html">
+        <source>Featured Tours</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/home.component.ts</context>
+          <context context-type="linenumber">61</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ae5a2ec602602cfc1ebf8de031cffc8149b130d5" datatype="html">
