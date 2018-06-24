@@ -51,10 +51,10 @@ class FetchApiController extends Controller
                 $tour->currency = $apiTour['price']['currency'];
                 $tour->url = $apiTour['URL'];
                 $tour->image_url = $apiTour['images'][0];
-                $tour->country = $apiTour['properties']['country'][0];
+                $tour->country = isset($apiTour['properties']['country'][0]) ? $apiTour['properties']['country'][0] : null;
                 $tour->city = $apiTour['properties']['city'][0];
                 $tour->service_type = $apiTour['properties']['serviceType'][0];
-                $tour->stars = isset($apiTour['properties']['stars'][0]) ? $apiTour['properties']['stars'][0] : 1;
+                $tour->stars = isset($apiTour['properties']['stars'][0]) ? $apiTour['properties']['stars'][0] : null;
                 $tour->save();
                 
                 // insert tour variations
