@@ -41,7 +41,7 @@ class FetchApiController extends Controller
             foreach($apiArray['products'] as $apiTour) {
                 // TEMP
                 $i++;
-                if($i==20) die('demo abort');
+                //if($i==20) die('demo abort');
                 
                 
                             
