@@ -37,8 +37,8 @@ export class FeaturedToursComponent implements OnInit {
     
     
   // function for tour redirection  
-  redirectUrl(tour_id,variation_id) {
-    return environment.apiUrl+'/redirect-tour/'+tour_id+'/'+variation_id;
+  redirectUrl(tour_id) {
+    return environment.apiUrl+'/redirect-tour/'+tour_id;
   }    
 
 }

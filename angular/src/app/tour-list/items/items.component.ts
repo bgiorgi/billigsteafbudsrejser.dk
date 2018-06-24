@@ -98,8 +98,8 @@ export class ItemsComponent implements OnInit {
   }
   
   
-  redirectUrl(tour_id,variation_id) {
-    return environment.apiUrl+'/redirect-tour/'+tour_id+'/'+variation_id;
+  redirectUrl(tour_id) {
+    return environment.apiUrl+'/redirect-tour/'+tour_id;
   }
     
 }

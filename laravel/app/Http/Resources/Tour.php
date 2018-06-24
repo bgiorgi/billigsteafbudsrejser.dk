@@ -25,7 +25,9 @@ class Tour extends Resource
             'image_url' => $this->image_url,
             'country' => $this->country,
             'city' => $this->city,
-            'service_type' => $this->service_type,
+            'departure_date' => $this->departure_date,
+            'duration' => $this->duration,
+            'number_of_persons' => $this->number_of_persons,
             'stars' => $this->stars,
             'provider' => new ProviderResource(Provider::find($this->provider_id)),
         ];

@@ -8,8 +8,7 @@ use App\Http\Controllers\Controller;
 
 use App\Tour;
 use App\Http\Resources\Tour as TourResource;
-use App\Variation;
-use App\Http\Resources\Variation as VariationResource;
+
 
 class TourController extends Controller
 {
@@ -27,7 +26,7 @@ class TourController extends Controller
 
 
 
-        $variations = Variation::
+        $tours = Tour::
         when($request->departure_date && $request->flexible_departure, function($query) use ($request,$departure_date_min,$departure_date_max){        
               return $query->where('departure_date', '>',$departure_date_min)->where('departure_date','<',$departure_date_max);
         })
@@ -44,29 +43,19 @@ class TourController extends Controller
             return $query->where('provider_id',$request->provider_id);
         }) 
         ->when(strlen($request->destination)>3,function($query) use($request) {
-            return $query->whereHas('tour',function($query) use ($request) {
-                $query->where('country','like',"%$request->destination%")->orWhere('city','like',"%$request->destination%");
-            });
+            return    $query->where('country','like',"%$request->destination%")->orWhere('city','like',"%$request->destination%");
         })    
         ->when($request->price_min,function($query) use($request) {
-            return $query->whereHas('tour',function($query) use ($request) {
-                 $query->where('price','>',$request->price_min);
-            });
+             return    $query->where('price','>',$request->price_min);
         }) 
         ->when($request->price_max,function($query) use($request) {
-            return $query->whereHas('tour',function($query) use ($request) {
-                 $query->where('price','<',$request->price_max);
-            });
+            return     $query->where('price','<',$request->price_max);
         }) 
         ->when($request->order && $request->order=='price',function($query) {
-            return $query->whereHas('tour',function($query)  {
-                 $query->orderBy('price','asc');
-            });
+            return     $query->orderBy('price','asc');
         }) 
         ->when($request->order && $request->order=='date',function($query)  {
-            return $query->whereHas('tour',function($query)  {
-                 $query->orderBy('departure_date','asc');
-            });
+            return     $query->orderBy('departure_date','asc');
         }) 
         ->when($request->order && $request->order=='popularity', function($query) {
             return $query->orderBy('view_count','desc');
@@ -76,7 +65,7 @@ class TourController extends Controller
         })          
         ->paginate(30);
         
-        return VariationResource::collection($variations);
+        return TourResource::collection($tours);
         
         
 
@@ -88,23 +77,21 @@ class TourController extends Controller
             
             // popular tours
             if($request->tourType=="popular")  {
-                return VariationResource::collection(Variation::orderBy('view_count','desc')->groupBy('tour_id')->limit(4)->get());
+                return TourResource::collection(Tour::orderBy('view_count','desc')->limit(4)->get());
             }
             
             
             
             // cheapest tours
             elseif($request->tourType=="cheapest")  {
-                return VariationResource::collection(Variation::whereHas('tour',function($query) {
-                    $query->orderBy('price','asc');
-                })->groupBy('tour_id')->limit(4)->get());
+                return TourResource::collection(Tour::orderBy('price','asc')->limit(4)->get());
             }
             
             
             
             // closest tours
             elseif($request->tourType=="closest") {
-                return VariationResource::collection(Variation::orderBy('departure_date','asc')->distinct('tour_id')->groupBy('tour_id')->limit(4)->get());
+                return TourResource::collection(Tour::orderBy('departure_date','asc')->limit(4)->get());
             }
             
             

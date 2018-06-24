@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\Tour;
 use \App\Provider;
-use \App\Variation;
 
 
 
@@ -33,51 +32,102 @@ class FetchApiController extends Controller
             $provider = Provider::where('code',$code)->first();
             // delete existed tours in database, by current provider
             Tour::where('provider_id',$provider->id)->delete();
-            Variation::where('provider_id',$provider->id)->delete();
             
             // TEMP
             $i=0;
             
+
             // insert tours
             foreach($apiArray['products'] as $apiTour) {
                 // TEMP
                 $i++;
-                //if($i==20) die('demo abort');
+                if($i==20) die('demo abort');
                 
-                $tour = new Tour;
-                $tour->provider_id = $provider->id;
-                $tour->name = $apiTour['name'];
-                $tour->price = $apiTour['price']['amount'];
-                $tour->currency = $apiTour['price']['currency'];
-                $tour->url = $apiTour['URL'];
-                $tour->image_url = $apiTour['images'][0];
-                $tour->country = isset($apiTour['properties']['country'][0]) ? $apiTour['properties']['country'][0] : null;
-                $tour->city = isset($apiTour['properties']['city'][0]) ? $apiTour['properties']['city'][0] : null;
-                $tour->service_type = isset($apiTour['properties']['serviceType'][0]) ? $apiTour['properties']['serviceType'][0] : null;
-                $tour->stars = isset($apiTour['properties']['stars'][0]) ? $apiTour['properties']['stars'][0] : null;
-                $tour->save();
                 
-                // insert tour variations
-                if($apiTour['variations']){
-                    foreach($apiTour['variations'] as $apiVariation) {
-                        $variation = new Variation;
-                        $variation->tour_id = $tour->id;
-                        $variation->provider_id = $provider->id;
-                        $variation->departure_date = $apiVariation['departureDate'][0];
-                        $variation->duration = $apiVariation['duration'][0];
-                        $variation->departure_price = $apiVariation['departurePrice'][0];
-                        $variation->number_of_persons = $apiVariation['numberOfPersons'][0];
-                        $variation->transport_type = $apiVariation['transportType'][0];
-                        $variation->save();
-                    }
+                            
+                // sunweb
+                if($code=="SUNWEB") {
+                    
+                    
+                    $tour = new Tour;
+                    $tour->provider_id = $provider->id;
+                    $tour->name = $apiTour['name'];
+                    $tour->price = $apiTour['price']['amount'];
+                    $tour->currency = $apiTour['price']['currency'];
+                    $tour->url = $apiTour['URL'];
+                    $tour->image_url = $apiTour['images'][0];
+                    $tour->country = $apiTour['properties']['country'][0];
+                    $tour->city = $apiTour['properties']['city'][0];
+                    $tour->stars = isset($apiTour['properties']['stars'][0]) ? $apiTour['properties']['stars'][0] : null;
+    
+                    
+                    // insert tour variations
+                        foreach($apiTour['variations'] as $apiVariation) {
+                            $tour->departure_date = $apiVariation['departureDate'][0];
+                            $tour->duration = $apiVariation['duration'][0];
+                            $tour->number_of_persons = $apiVariation['numberOfPersons'][0];
+                        }
+                    $tour->save();                    
                 }
-                else {
-                        // insert emppty variation, if it doesn't exist in api
-                        $variation = new Variation;
-                        $variation->tour_id = $tour->id;
-                        $variation->provider_id = $provider->id;   
-                        $variation->save();
+                elseif($code=="TRAVELBIRD") {
+                    $tour = new Tour;
+                    $tour->provider_id = $provider->id;
+                    $tour->name = $apiTour['name'];
+                    $tour->price = $apiTour['price']['amount'];
+                    $tour->currency = $apiTour['price']['currency'];
+                    $tour->url = $apiTour['URL'];
+                    $tour->image_url = $apiTour['images'][0];
+                    $tour->country = $apiTour['properties']['country'][0];
+                    $tour->city = $apiTour['properties']['city'][0];
+                    $tour->duration = $apiTour['properties']['numberOfDays'][0];
+                    $tour->save();
                 }
+                elseif($code=="PRIMOTOURS") {
+                    $tour = new Tour;
+                    $tour->provider_id = $provider->id;
+                    $tour->name = $apiTour['name'];
+                    $tour->price = $apiTour['price']['amount'];
+                    $tour->currency = $apiTour['price']['currency'];
+                    $tour->url = $apiTour['URL'];
+                    $tour->image_url = $apiTour['images'][0];
+                    $tour->country = $apiTour['properties']['arrivalCountry'][0];
+                    $tour->city = $apiTour['properties']['arrivalAirport'][0];
+                    $tour->duration = $apiTour['properties']['duration'][0];
+                    $tour->stars = $apiTour['properties']['stars'][0];
+                    $tour->departure_date = $apiTour['properties']['departureDate'][0];
+                    $tour->save();
+                }    
+                elseif($code=="AARHUSCHARTER") {
+                    $tour = new Tour;
+                    $tour->provider_id = $provider->id;
+                    $tour->name = $apiTour['name'];
+                    $tour->price = $apiTour['price']['amount'];
+                    $tour->currency = $apiTour['price']['currency'];
+                    $tour->url = $apiTour['URL'];
+                    $tour->image_url = $apiTour['images'][0];
+                    $tour->country = $apiTour['properties']['arrivaleCountry'][0];
+                    $tour->city = $apiTour['properties']['arrivalAirport'][0];
+                    $tour->duration = $apiTour['properties']['duration'][0];
+                    $tour->stars = $apiTour['properties']['stars'][0];
+                    $tour->departure_date = $apiTour['properties']['departureDate'][0];
+                    $tour->save();
+                }    
+                elseif($code=="SUNCHARTER") {
+                    $tour = new Tour;
+                    $tour->provider_id = $provider->id;
+                    $tour->name = $apiTour['name'];
+                    $tour->price = $apiTour['price']['amount'];
+                    $tour->currency = $apiTour['price']['currency'];
+                    $tour->url = $apiTour['URL'];
+                    $tour->image_url = $apiTour['images'][0];
+                    $tour->country = $apiTour['properties']['arrivaleCountry'][0];
+                    $tour->city = $apiTour['properties']['arrivalAirport'][0];
+                    $tour->duration = $apiTour['properties']['duration'][0];
+                    $tour->stars = $apiTour['properties']['stars'][0];
+                    $tour->departure_date = $apiTour['properties']['departureDate'][0];
+                    $tour->save();
+                }                    
             }
+
     }
 }

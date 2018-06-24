@@ -24,4 +24,4 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 
-Route::get('redirect-tour/{id}/{variation_id}','RedirectTourController@Redirect');
+Route::get('redirect-tour/{tour_id}','RedirectTourController@Redirect');

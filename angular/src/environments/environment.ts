@@ -3,10 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 
-//apiUrl: 'http://dev-billigsteafbudsrejser-badza.c9users.io:8082'
+
 export const environment = {
   production: false,
-  apiUrl: 'http://back.billigsteafbudsrejser.dk'
+  apiUrl: 'http://v2-billigsteafbudsrejser-badza.c9users.io:8082'
 };
 
 /*
