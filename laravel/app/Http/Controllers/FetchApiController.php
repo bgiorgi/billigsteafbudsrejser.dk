@@ -77,7 +77,6 @@ class FetchApiController extends Controller
                         $variation->tour_id = $tour->id;
                         $variation->provider_id = $provider->id;   
                         $variation->save();
-                
                 }
             }
     }
