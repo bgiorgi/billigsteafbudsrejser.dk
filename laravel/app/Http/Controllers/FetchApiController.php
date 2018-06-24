@@ -58,16 +58,25 @@ class FetchApiController extends Controller
                 $tour->save();
                 
                 // insert tour variations
-                foreach($apiTour['variations'] as $apiVariation) {
-                    $variation = new Variation;
-                    $variation->tour_id = $tour->id;
-                    $variation->provider_id = $provider->id;
-                    $variation->departure_date = $apiVariation['departureDate'][0];
-                    $variation->duration = $apiVariation['duration'][0];
-                    $variation->departure_price = $apiVariation['departurePrice'][0];
-                    $variation->number_of_persons = $apiVariation['numberOfPersons'][0];
-                    $variation->transport_type = $apiVariation['transportType'][0];
-                    $variation->save();
+                if($apiTour['variations']){
+                    foreach($apiTour['variations'] as $apiVariation) {
+                        $variation = new Variation;
+                        $variation->tour_id = $tour->id;
+                        $variation->provider_id = $provider->id;
+                        $variation->departure_date = $apiVariation['departureDate'][0];
+                        $variation->duration = $apiVariation['duration'][0];
+                        $variation->departure_price = $apiVariation['departurePrice'][0];
+                        $variation->number_of_persons = $apiVariation['numberOfPersons'][0];
+                        $variation->transport_type = $apiVariation['transportType'][0];
+                        $variation->save();
+                    }
+                }
+                else {
+                        $variation = new Variation;
+                        $variation->tour_id = $tour->id;
+                        $variation->provider_id = $provider->id;   
+                        $variation->save();
+                
                 }
             }
     }
