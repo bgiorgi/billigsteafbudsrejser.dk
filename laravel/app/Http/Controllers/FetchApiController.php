@@ -52,8 +52,8 @@ class FetchApiController extends Controller
                 $tour->url = $apiTour['URL'];
                 $tour->image_url = $apiTour['images'][0];
                 $tour->country = isset($apiTour['properties']['country'][0]) ? $apiTour['properties']['country'][0] : null;
-                $tour->city = $apiTour['properties']['city'][0];
-                $tour->service_type = $apiTour['properties']['serviceType'][0];
+                $tour->city = isset($apiTour['properties']['city'][0]) ? $apiTour['properties']['city'][0] : null;
+                $tour->service_type = isset($apiTour['properties']['serviceType'][0]) ? $apiTour['properties']['serviceType'][0] : null;
                 $tour->stars = isset($apiTour['properties']['stars'][0]) ? $apiTour['properties']['stars'][0] : null;
                 $tour->save();
                 
