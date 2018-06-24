@@ -72,6 +72,7 @@ class FetchApiController extends Controller
                     }
                 }
                 else {
+                        // insert emppty variation, if it doesn't exist in api
                         $variation = new Variation;
                         $variation->tour_id = $tour->id;
                         $variation->provider_id = $provider->id;   
