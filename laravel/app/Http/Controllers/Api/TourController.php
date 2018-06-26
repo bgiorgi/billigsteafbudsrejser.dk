@@ -31,7 +31,7 @@ class TourController extends Controller
               return $query->where('departure_date', '>',$departure_date_min)->where('departure_date','<',$departure_date_max);
         })
         ->when($request->number_of_persons, function($query) use ($request){
-                return $query->where('number_of_persons',$request->number_of_persons);
+                return $query->where('number_of_persons',$request->number_of_persons)->orWhere('number_of_persons',null);
         })
         ->when($request->duration_min, function($query) use ($request){
                return $query->where('duration','>',$request->duration_min);

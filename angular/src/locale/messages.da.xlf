@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
+
     <body>
       <trans-unit id="personsCount" datatype="html">
         <source>Persons</source>
@@ -251,7 +252,7 @@
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
-            <trans-unit id="dayPlural" datatype="html">
+      <trans-unit id="dayPlural" datatype="html">
         <source>{VAR_PLURAL, plural, =1 {day} other {days} }</source>
         <target>{VAR_PLURAL, plural, =1 {dag} other {dage} }</target>
         <context-group purpose="location">
@@ -263,7 +264,7 @@
           <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
-            <trans-unit id="personPlural" datatype="html">
+      <trans-unit id="personPlural" datatype="html">
         <source>{VAR_PLURAL, plural, =1 {person} other {persons} }</source>
         <target>{VAR_PLURAL, plural, =1 {person} other {personer} }</target>
         <context-group purpose="location">
@@ -275,7 +276,7 @@
           <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
-            <trans-unit id="featuredTours" datatype="html">
+      <trans-unit id="featuredTours" datatype="html">
         <source>Featured Tours</source>
         <target>Udvalgte ture</target>
         <context-group purpose="location">
@@ -283,12 +284,20 @@
           <context context-type="linenumber">61</context>
         </context-group>
       </trans-unit>
-       <trans-unit id="searchButton" datatype="html">
+      <trans-unit id="searchButton" datatype="html">
         <source>{VAR_SELECT, select, searching {searching...} other {search} }</source>
         <target>{VAR_SELECT, select, searching {Søger...} other {Søg} }</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/home/home.component.ts</context>
           <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="days" datatype="html">
+        <source>Days</source>
+        <target>Dage</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/sidebar/sidebar.component.ts</context>
+          <context context-type="linenumber">67</context>
         </context-group>
       </trans-unit>
     </body>
