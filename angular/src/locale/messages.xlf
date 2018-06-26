@@ -251,6 +251,20 @@
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="675be1d95ad9a42078d4a05414026e7eeaf2e13c" datatype="html">
+        <source>{VAR_SELECT, select, 1 {day} other {days} }</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/items/items.component.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="80501d5e19af5998c79127e835616790ecfd1d95" datatype="html">
+        <source>{VAR_SELECT, select, 1 {person} other {persons} }</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/items/items.component.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="nothingFound" datatype="html">
         <source>Nothing Found</source>
         <context-group purpose="location">

@@ -253,8 +253,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="dayPlural" datatype="html">
-        <source>{VAR_PLURAL, plural, =1 {day} other {days} }</source>
-        <target>{VAR_PLURAL, plural, =1 {dag} other {dage} }</target>
+        <source/>
+        <target>{tour.duration, plural, =1 {dag} other {dage} }</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/home/featured-tours/featured-tours.component.ts</context>
           <context context-type="linenumber">13</context>
@@ -265,8 +265,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="personPlural" datatype="html">
-        <source>{VAR_PLURAL, plural, =1 {person} other {persons} }</source>
-        <target>{VAR_PLURAL, plural, =1 {person} other {personer} }</target>
+        <source/>
+        <target>{tour.number_of_persons, plural, =1 {person} other {personer} }</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/home/featured-tours/featured-tours.component.ts</context>
           <context context-type="linenumber">13</context>
@@ -300,6 +300,10 @@
           <context context-type="linenumber">67</context>
         </context-group>
       </trans-unit>
+
+
+
+
     </body>
   </file>
 </xliff>
