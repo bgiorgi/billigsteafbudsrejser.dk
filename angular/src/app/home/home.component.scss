@@ -1,9 +1,9 @@
 .main-container {
     background-size: cover !important;
     min-height: 70vh;
-    width:100%;
-    background-image:url('/assets/images/mainpage_header_bg.jpg');    
-    background-position:center;
+    width: 100%;
+    background-image: url('/assets/images/mainpage_header_bg.jpg');
+    background-position: center;
 }
 
 
@@ -35,38 +35,44 @@
     top: 50%;
     transformY: translate(-50%);
     color: white;
+    font-size: .9rem;
 
     .large-input {
         &.large-input-number {
-            width:10rem;
-            padding-right:1rem;
+            width: 10rem;
+            padding-right: 1rem;
         }
         padding: .7rem 3rem;
         border: 0;
         background: white;
         box-sizing: border-box;
-        font-size: 1.2rem;
-        outline: none;     
-        max-width:100%;
+        font-size: .9rem;
+        outline: none;
+        max-width: 100%;
     }
 
     .large-input-container {
         position: relative;
+        display: inline-flex;
     }
 
     .large-input-container .input-icon {
         position: absolute;
-        top: 1.2rem;
-        left: 10px;
+        left: 1rem;
         color: #8e8e8e;
-        font-size: 1.4rem;
+        font-size: .9rem;
+        top: .8rem;
     }
-    
+
     .flexible-departure-select {
+        font-size: .9rem;
         color: white;
-    background: initial;
-    border: 0;
-    font-size: initial;
+        background: initial;
+        border: 0;
+        option {
+            background: white;
+            color: black;
+        }
     }
 
 }
@@ -77,27 +83,26 @@ hr.provider-divider {
 
 
 footer {
-  padding: 20px;
-  background: #fbfbfb;
-  .copyright {
-    font-weight: 100;
-    font-size: .6rem;
-  }
+    padding: 20px;
+    background: #fbfbfb;
+    .copyright {
+        font-weight: 100;
+        font-size: .6rem;
+    }
 }
 
 
 //mobile
-
 @media (max-width: 500px) {
     .main-container {
-        height:100vh;
-        background-image:url('/assets/images/mainpage_header_bg_m.jpg');
+        height: 100vh;
+        background-image: url('/assets/images/mainpage_header_bg_m.jpg');
     }
     .large-input-number {
-        width:initial;
+        width: initial;
     }
-    
+
     .search-form {
-        left:0;
+        left: 0;
     }
 }

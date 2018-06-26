@@ -9,17 +9,19 @@
         <!--search form-->
         <form action="tour-list" class="search-form w-100" method="get" (ngSubmit)="onSubmit()">
             <!--large inputs for destination and departure date-->
-            <div fxLayout="row wrap" fxLayoutAlign="left" class="text-left large-input-container mb-2" fxLayout.xs="column" fxFlexFill>
-                <div class="pr-5 py-2 float-left large-input-container text-left" fxFlex="10" fxFlex.sm="30" fxFlexOffset.md="10px">
-                    <input i18n-placeholder="@@personsCount" class="large-input large-input-number mat-elevation-z4" name="number_of_persons" placeholder="Persons" type="number" [(ngModel)]="params.number_of_persons">
-                    <mat-icon matSuffix class="input-icon">people</mat-icon>
-                </div>
-
-
-                <div class="pr-5 py-2 float-left large-input-container text-left" fxFlex="45" fxFlex.sm="70" fxFlexOffset.md="10px">
+            <div fxLayout="row wrap" fxLayoutAlign="left" class="text-left  mb-2" fxLayout.xs="column" fxFlexFill>
+                <div class="px-2 py-2 float-left text-left" fxFlex="100">
+                    
+                    <span class="large-input-container my-1">
+                    <mat-icon class="input-icon">people</mat-icon>
+                    <input i18n-placeholder="@@personsCount" class="large-input large-input-number mat-elevation-z4 mr-2" name="number_of_persons" placeholder="Persons" type="number" [(ngModel)]="params.number_of_persons">
+                    </span>
+                    
+                    <span class="large-input-container my-1">
+                    <mat-icon class="input-icon">calendar_today</mat-icon>
                     <input i18n-placeholder="@@departureDate" class="large-input mat-elevation-z4" name="departure_date" placeholder="Departure Date" [matDatepicker]="picker" (click)="picker.open()" [(ngModel)]="params.departure_date">
-                    <mat-icon matSuffix class="input-icon">calendar_today</mat-icon>
                     <mat-datepicker #picker></mat-datepicker>
+                    </span>
                 </div>
             </div>
             <!--/large inputs for destination and departure date-->
@@ -28,7 +30,7 @@
             <div fxLayout="row wrap" fxLayoutAlign="space-around center" class="text-left" fxLayout.xs="column" fxFlexFill>
                 <div class="secondary-fields-container text-left" fxFlex="100" fxFlexOffset="20px">
                     <!--flexible departure select-->
-                    <ng-container i18n="@@departureFlexibility">Flexible departure</ng-container>
+                    <span i18n="@@departureFlexibility" class="mr-1">Flexible departure</span>
                     <select name="flexible_departure" class="flexible-departure-select" [(ngModel)]="params.flexible_departure">
                             <option i18n="@@1week" value="7">1 Week</option>
                             <option i18n="@@2weeks" value="14">2 Weeks</option>
