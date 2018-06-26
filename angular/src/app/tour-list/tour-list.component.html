@@ -1,6 +1,6 @@
 <mat-drawer-container>
   <!--sidebar-->
-  <mat-drawer mode="side" opened="true" class="example-sidenav" fxHide.xs>
+  <mat-drawer mode="side" opened="true" class="example-sidenav" fxHide.xs fxHide.sm>
     <app-sidebar></app-sidebar>
   </mat-drawer>
   <!--/sidebar-->
@@ -9,14 +9,14 @@
   <mat-drawer-content>
 
     <!--mobile-->
-    <div class="container pt-0" fxHide fxShow.xs>
+    <div class="container pt-0" fxHide fxShow.xs fxShow.sm>
       <a href="/">
         <div class="logo-container-mobile mb-4">
           <h5>billigste afbudsrejser</h5>
         </div>
       </a>
       <!-- filtering dialog-->
-      <a (click)="openBottomSheet()" class="float-right" fxHide fxShow.xs><small><mat-icon>filter_list</mat-icon> <ng-container i18n>Filters</ng-container></small></a>
+      <a (click)="openBottomSheet()" class="float-right" fxHide fxShow.xs fxShow.sm><small><mat-icon>filter_list</mat-icon> <ng-container i18n>Filters</ng-container></small></a>
       <!--/ filtering dialog-->
     </div>
     <!--/mobile-->

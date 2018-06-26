@@ -91,7 +91,7 @@ class TourController extends Controller
             
             // closest tours
             elseif($request->tourType=="closest") {
-                return TourResource::collection(Tour::orderBy('departure_date','asc')->limit(4)->get());
+                return TourResource::collection(Tour::whereNotNull('departure_date')->orderBy('departure_date','asc')->limit(4)->get());
             }
             
             
