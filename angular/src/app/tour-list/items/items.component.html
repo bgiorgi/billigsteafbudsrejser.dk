@@ -10,7 +10,7 @@
 
             <mat-card-content>
                 <p>
-                    <span class="hotel" *ngIf="tour.departure_date && tour.duration">{{ tour.departure_date | date:"MMM d" }} +{{ tour.duration }} <ng-container i18n="@@dayPlural">{tour?.duration, select, 1 {day} other {days}}</ng-container></span>  &nbsp;  <span class="from" *ngIf="(tour.number_of_persons)">{{ tour.number_of_persons }} <ng-container i18n="@@personPlural">{tour.number_of_persons, select, 1 {person} other {persons}}</ng-container></span>
+                    <span class="hotel" *ngIf="tour.departure_date && tour.duration">{{ tour.departure_date | date:"MMM d" }} +{{ tour.duration }} <ng-container i18n="@@dayPlural">{tour.duration, select, 1 {day} other {days}}</ng-container></span>  &nbsp;  <span class="from" *ngIf="tour.number_of_persons">{{ tour.number_of_persons }} <ng-container i18n="@@personPlural">{tour.number_of_persons, select, 1 {person} other {persons}}</ng-container></span>
                     <span class="price">{{ tour.currency }} {{ tour.price }}</span>
                     <br>
                     <span class="destination">{{ tour.city }}</span> &nbsp; <span class="from">{{ tour.country }}</span>

@@ -67,14 +67,6 @@
               "buildOptimizer": true
             },
 
-            "da": {
-              "aot": true,
-              "outputPath": "dist/my-project-da/",
-              "i18nFile": "src/locale/messages.da.xlf",
-              "i18nFormat": "xlf",
-              "i18nLocale": "da",
-
-            },
 
             "production-da": {
               "fileReplacements": [{
