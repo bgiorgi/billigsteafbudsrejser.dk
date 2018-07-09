@@ -1,9 +1,9 @@
 <div align="right" class="py-0 py-lg-4">
 <mat-form-field>
   <mat-select i18n-placeholder="@@sortBy" placeholder="Sort By" ([value])="params.order" [(ngModel)]="params.order" (ngModelChange)="sortTours()">
-    <mat-option i18n-value value="date">Date</mat-option>
-    <mat-option i18n-value value="price">Price</mat-option>
-    <mat-option i18n-value value="popularity">Popularity</mat-option>
+    <mat-option i18n="sort@@date" value="date">Date</mat-option>
+    <mat-option i18n="sort@@price" value="price">Price</mat-option>
+    <mat-option i18n="sort@@popularity" value="popularity">Popularity</mat-option>
   </mat-select>
 </mat-form-field>
 </div>

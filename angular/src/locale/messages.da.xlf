@@ -300,8 +300,45 @@
           <context context-type="linenumber">67</context>
         </context-group>
       </trans-unit>
-
-
+      <trans-unit id="date" datatype="html">
+        <source>Date</source>
+        <target>Dato</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/sorting/sorting.component.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <note priority="1" from="description">sort</note>
+      </trans-unit>
+      <trans-unit id="price" datatype="html">
+        <source>Price</source>
+        <target>Pris</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/sorting/sorting.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">sort</note>
+      </trans-unit>
+      <trans-unit id="popularity" datatype="html">
+        <source>Popularity</source>
+        <target>Popularitet</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/sorting/sorting.component.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">sort</note>
+      </trans-unit>
+      <trans-unit id="departureAirport" datatype="html">
+        <source>Departure Airport</source>
+        <target>Afgang Lufthavn</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/home.component.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/sidebar/sidebar.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
 
 
     </body>

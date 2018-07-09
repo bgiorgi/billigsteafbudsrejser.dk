@@ -8,10 +8,6 @@
 
   <form class="example-form" [formGroup]="form">
 
-    <mat-form-field class="example-full-width short-input">
-      <input matInput i18n-placeholder="@@persons" placeholder="Persons" formControlName="number_of_persons" type="number">
-    </mat-form-field>
-    <br>
 
     <mat-form-field>
       <input matInput i18n-placeholder="@@departureDate" [matDatepicker]="picker" placeholder="Departure Date" (click)="picker.open()" formControlName="departure_date">
@@ -20,6 +16,16 @@
     </mat-form-field>
 
     <br>
+    
+    <mat-form-field>
+      <mat-select i18n-placeholder="@@departureAirport" placeholder="Departure Airport" formControlName="departure_airport" multiple>
+        <mat-option value="Billund">Billund</mat-option>
+        <mat-option value="Aalborg">Aalborg</mat-option>
+        <mat-option value="Aarhus">Aarhus</mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+<br>
 
     <mat-form-field>
       <mat-select i18n-placeholder="@@flexibleDeparture" placeholder="Flexible Departure" formControlName="flexible_departure">
@@ -37,7 +43,6 @@
       <input matInput i18n-placeholder="destination" placeholder="Destination" formControlName="destination" [matAutocomplete]="auto">
       <mat-autocomplete #auto="matAutocomplete">
         <mat-option *ngFor="let state of filteredStates | async" [value]="state.value">
-          <img style="vertical-align:middle;" aria-hidden src="{{state.flag}}" height="25" />
           <small>{{ state.displayValue }}</small>
         </mat-option>
       </mat-autocomplete>

@@ -121,3 +121,22 @@ a {
         opacity: .8;
     }
 }
+
+
+
+
+
+.large-field {
+    width: 20rem;
+    max-width: 100%;
+    .mat-form-field-flex {
+        background: white !important;
+        padding: .2rem .6rem;
+        height:3.3rem;
+        color:black;
+        mat-icon {
+            color: gray;
+            margin:.3rem;
+        }
+    }
+}

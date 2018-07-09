@@ -30,8 +30,8 @@ class TourController extends Controller
         when($request->departure_date && $request->flexible_departure, function($query) use ($request,$departure_date_min,$departure_date_max){        
               return $query->where('departure_date', '>',$departure_date_min)->where('departure_date','<',$departure_date_max);
         })
-        ->when($request->number_of_persons, function($query) use ($request){
-                return $query->where('number_of_persons',$request->number_of_persons)->orWhere('number_of_persons',null);
+        ->when($request->departure_airport, function($query) use ($request){
+                return $query->whereIn('departure_airport',json_decode($request->departure_airport,1));
         })
         ->when($request->duration_min, function($query) use ($request){
                return $query->where('duration','>',$request->duration_min);

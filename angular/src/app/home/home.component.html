@@ -11,17 +11,25 @@
             <!--large inputs for destination and departure date-->
             <div fxLayout="row wrap" fxLayoutAlign="left" class="text-left  mb-2" fxLayout.xs="column" fxFlexFill>
                 <div class="px-2 py-2 float-left text-left" fxFlex="100">
-                    
-                    <span class="large-input-container my-1">
-                    <mat-icon class="input-icon">people</mat-icon>
-                    <input i18n-placeholder="@@personsCount" class="large-input large-input-number mat-elevation-z4 mr-2" name="number_of_persons" placeholder="Persons" type="number" [(ngModel)]="params.number_of_persons">
-                    </span>
-                    
-                    <span class="large-input-container my-1">
-                    <mat-icon class="input-icon">calendar_today</mat-icon>
-                    <input i18n-placeholder="@@departureDate" class="large-input mat-elevation-z4" name="departure_date" placeholder="Departure Date" [matDatepicker]="picker" (click)="picker.open()" [(ngModel)]="params.departure_date">
-                    <mat-datepicker #picker></mat-datepicker>
-                    </span>
+
+
+                    <mat-form-field class="large-field mr-md-2">
+                        <span matPrefix style="margin-right: 8px;"><mat-icon>local_airport</mat-icon></span>
+                        <mat-select i18n-placeholder="@@departureAirport" placeholder="Departure Airport" multiple [value]="params.departure_airport">
+                            <mat-option value="Billund">Billund</mat-option>
+                            <mat-option value="Aalborg">Aalborg</mat-option>
+                            <mat-option value="Aarhus">Aarhus</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+
+                    <mat-form-field class="large-field">
+                        <span matPrefix style="margin-right: 8px;"><mat-icon>calendar_today</mat-icon></span>
+                        <input i18n-placeholder="@@departureDate" matInput name="departure_date" placeholder="Departure Date" [matDatepicker]="picker" (click)="picker.open()" [(ngModel)]="params.departure_date">
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+
+
                 </div>
             </div>
             <!--/large inputs for destination and departure date-->

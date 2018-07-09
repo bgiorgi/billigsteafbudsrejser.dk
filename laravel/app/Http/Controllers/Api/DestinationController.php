@@ -10,6 +10,6 @@ use App\Http\Resources\Destination as DestinationResource;
 class DestinationController extends Controller
 {
     public static function Popular() {
-                return DestinationResource::collection(Destination::orderBy('view_count','desc')->limit(20)->get());
+                return DestinationResource::collection(Destination::orderBy('view_count','desc')->limit(15)->get());
     }
 }

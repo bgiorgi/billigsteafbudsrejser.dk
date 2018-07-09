@@ -1,7 +1,7 @@
 <div fxLayout="row wrap" fxLayoutAlign="start center" class="text-left" fxLayout.xs="column" fxFlexFill>
     <div fxFlex="20" fxFlex.xs="100" fxFlex.sm="50" fxFlex.md="33" fxFlex.lg="25" class="search-card-container" *ngFor="let tour of tours?.data" [ngClass]="{ 'fade': isLoading }">
         <mat-card class="tour-card">
-            <a href="{{ redirectUrl(tour.id) }}" target="blank">
+            <a href="{{ redirectUrl(tour.id) }}" target="_blank">
             <img mat-card-image src="{{ tour.image_url }}">
             </a>
             <div class="provider-logo mat-elevation-z1">

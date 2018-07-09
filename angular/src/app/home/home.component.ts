@@ -10,6 +10,7 @@ import * as moment from 'moment';
 export class HomeComponent implements OnInit {
 
   params:any= {
+    departure_airport: ['Billund','Aalborg','Aarhus'],
     flexible_departure:21
   };
   searching = false; 

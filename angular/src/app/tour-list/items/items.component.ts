@@ -34,7 +34,7 @@ export class ItemsComponent implements OnInit {
   ngOnInit() {
     this.route.queryParams.subscribe(queryParams => {
       this.params = {
-        number_of_persons: queryParams.number_of_persons,
+        departure_airport: JSON.stringify(queryParams.departure_airport),
         departure_date: moment(queryParams.departure_date).format('YYYY-MM-DD'),
         flexible_departure: queryParams.flexible_departure,
         destination: queryParams.destination,
@@ -57,6 +57,7 @@ export class ItemsComponent implements OnInit {
   // function for getting tours, which uses initialized service
   searchTours() {
     this.isLoading = true;  
+    console.log(this.params);
    this.itemsService.getTours(this.params)
   .subscribe((data:any) => { 
     this.tours = data;

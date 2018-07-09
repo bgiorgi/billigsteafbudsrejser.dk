@@ -19,9 +19,10 @@ export class SidebarComponent implements OnInit {
   
   params:any;
   form: FormGroup;
-  states: any;
+
   
   // for autocomplete
+  states: any;  
   filteredStates: Observable<any[]>;
 
 
@@ -45,7 +46,7 @@ export class SidebarComponent implements OnInit {
   ngOnInit() {
     this.route.queryParams.subscribe(queryParams => {
       this.params = {
-        number_of_persons: queryParams.number_of_persons,
+        departure_airport: queryParams.departure_airport,
         departure_date: queryParams.departure_date,
         flexible_departure: queryParams.flexible_departure,
         destination: queryParams.destination,
@@ -56,6 +57,7 @@ export class SidebarComponent implements OnInit {
         order: queryParams.order
       }
     });
+
   
     this.createForm();
     this.valueChanges();
@@ -87,7 +89,7 @@ export class SidebarComponent implements OnInit {
   
   createForm() {
         this.form = this.fb.group({
-          "number_of_persons": this.params.number_of_persons,
+          "departure_airport": [this.params.departure_airport],
           "departure_date": this.params.departure_date,
           "flexible_departure": this.params.flexible_departure,
           "destination": this.params.destination,
@@ -105,7 +107,7 @@ export class SidebarComponent implements OnInit {
     this.form.valueChanges
       .subscribe((value) => {
       let queryParams = {
-        number_of_persons: value.number_of_persons,
+        departure_airport: value.departure_airport,
         departure_date: value.departure_date,
         flexible_departure: value.flexible_departure,
         destination: value.destination,
@@ -117,6 +119,7 @@ export class SidebarComponent implements OnInit {
     }
     if(queryParams.departure_date) queryParams.departure_date = moment(queryParams.departure_date).format('YYYY-MM-DD');
     this.router.navigate([], { queryParams: queryParams});
+    // console.log(form.value);
       });
       
   }

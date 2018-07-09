@@ -6,7 +6,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://v2-billigsteafbudsrejser-badza.c9users.io:8082'
+  apiUrl: 'https://dev-billigsteafbudsrejser-badza.c9users.io:8082'
 };
 
 /*

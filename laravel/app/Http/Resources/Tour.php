@@ -30,6 +30,7 @@ class Tour extends Resource
             'number_of_persons' => $this->number_of_persons,
             'stars' => $this->stars,
             'provider' => new ProviderResource(Provider::find($this->provider_id)),
+            'departure_airport' => $this->departure_airport
         ];
     }
 }

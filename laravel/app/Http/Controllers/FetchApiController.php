@@ -95,6 +95,7 @@ class FetchApiController extends Controller
                     $tour->duration = $apiTour['properties']['duration'][0];
                     $tour->stars = $apiTour['properties']['stars'][0];
                     $tour->departure_date = $apiTour['properties']['departureDate'][0];
+                    $tour->departure_airport = $apiTour['properties']['departureAirport'][0];
                     $tour->save();
                 }    
                 elseif($code=="AARHUSCHARTER") {
@@ -110,6 +111,7 @@ class FetchApiController extends Controller
                     $tour->duration = $apiTour['properties']['duration'][0];
                     $tour->stars = $apiTour['properties']['stars'][0];
                     $tour->departure_date = $apiTour['properties']['departureDate'][0];
+                    $tour->departure_airport = $apiTour['properties']['departureAirport'][0];                    
                     $tour->save();
                 }    
                 elseif($code=="SUNCHARTER") {
@@ -125,9 +127,12 @@ class FetchApiController extends Controller
                     $tour->duration = $apiTour['properties']['duration'][0];
                     $tour->stars = $apiTour['properties']['stars'][0];
                     $tour->departure_date = $apiTour['properties']['departureDate'][0];
+                    $tour->departure_airport = $apiTour['properties']['departureAirport'][0];                    
                     $tour->save();
                 }                    
             }
 
+
+        echo "Tours are fetched successfully";
     }
 }
