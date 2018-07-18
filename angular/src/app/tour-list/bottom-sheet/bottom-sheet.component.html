@@ -1,62 +1,96 @@
-<small i18n="@@searchFilters" class="text-gray font-thin">Search Filters</small>
+<div class="search-form-container">
+  <small i18n="@@searchFilters" class="text-gray font-thin">Search Filters</small>
 
-<form class="example-form" [formGroup]="form">
+  <form class="example-form" [formGroup]="form">
 
-  <mat-form-field class="example-full-width short-input">
-    <input matInput i18n-placeholder="@@persons" placeholder="Persons" formControlName="number_of_persons" type="number">
-  </mat-form-field>
+
+    <mat-form-field>
+      <input matInput i18n-placeholder="@@departureDate" [matDatepicker]="picker" placeholder="Departure Date" (click)="picker.open()" formControlName="departure_date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <br>
+    
+    <mat-form-field>
+      <mat-select i18n-placeholder="@@departureAirport" placeholder="Departure Airport" formControlName="departure_airport" multiple>
+        <mat-option value="Billund">Billund</mat-option>
+        <mat-option value="Aalborg">Aalborg</mat-option>
+        <mat-option value="Aarhus">Aarhus</mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+<br>
+
+    <mat-form-field>
+      <mat-select i18n-placeholder="@@flexibleDeparture" placeholder="Flexible Departure" formControlName="flexible_departure">
+        <mat-option i18n="@@1week" value="7">1 Week</mat-option>
+        <mat-option i18n="@@2weeks" value="14">2 Weeks</mat-option>
+        <mat-option i18n="@@3weeks" value="21">3 Weeks</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+
+    <br>
+
+    <mat-form-field class="example-full-width">
+      <input matInput i18n-placeholder="destination" placeholder="Destination" formControlName="destination" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let state of filteredStates | async" [value]="state.value">
+          <small>{{ state.displayValue }}</small>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+
+
+    <br>
+
+    <mat-form-field class="example-full-width short-input">
+      <input matInput i18n-placeholder="@@min" placeholder="Min" formControlName="price_min" type="number">
+    </mat-form-field>
+    <mat-form-field class="example-full-width short-input">
+      <input matInput i18n-placeholder="@@max" placeholder="Max" formControlName="price_max" type="number">
+    </mat-form-field>
+    <small>DKK</small>
+    <br>
+
+
+    <br>
+
+    <mat-form-field class="example-full-width short-input">
+      <input matInput i18n-placeholder="@@min" placeholder="Min" formControlName="duration_min" type="number">
+    </mat-form-field>
+    <mat-form-field class="example-full-width short-input">
+      <input matInput i18n-placeholder="@@max" placeholder="Max" formControlName="duration_max" type="number">
+    </mat-form-field>
+    <small i18n="@@days">Days</small>
+
+<br>
+
+    <mat-form-field>
+      <mat-select i18n-placeholder="@@providers" placeholder="Tour Providers" formControlName="providers" multiple>
+        <mat-option *ngFor="let provider of providers" [value]="provider.code"><img [src]="provider.logo" style="max-height:15px; max-width:30px"> {{ provider.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    
+  
+    
+    
+    
+  </form>
+
+</div>
+
+<div class="sidebar-footer">
+  <div class="sidebar-footer-inner">
+  <a href="/en" class="gray-text mr-2"><img style="width:15px" class="mr-1" src="assets/images/flag_en.jpg"> <small>English</small></a>
+  <a href="/da" class="gray-text"><img style="width:15px" class="mr-1" src="assets/images/flag_da.png"> <small>Dansk</small></a>
   <br>
-
-  <mat-form-field>
-    <input matInput i18n-placeholder="@@departureDate" [matDatepicker]="picker" placeholder="Departure Date" (click)="picker.open()" formControlName="departure_date">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
-
+  <small class="copyright">Copyright © 2018. billigsteafbudsrejser</small>
   <br>
-
-  <mat-form-field>
-    <mat-select i18n-placeholder="@@flexibleDeparture" placeholder="Flexible Departure" formControlName="flexible_departure">
-                            <mat-option i18n="@@1week" value="7">1 Week</mat-option>
-                            <mat-option i18n="@@2weeks" value="14">2 Weeks</mat-option>
-                            <mat-option i18n="@@3weeks" value="21">3 Weeks</mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <br>
-
-  <mat-form-field class="example-full-width">
-    <input matInput i18n-placeholder="destination" placeholder="Destination" formControlName="destination" [matAutocomplete]="auto">
-    <mat-autocomplete #auto="matAutocomplete">
-      <mat-option *ngFor="let state of filteredStates | async" [value]="state.value">
-        <img style="vertical-align:middle;" aria-hidden src="{{state.flag}}" height="25" />
-        <small>{{ state.displayValue }}</small>
-      </mat-option>
-    </mat-autocomplete>
-  </mat-form-field>
-
-
-
-  <br>
-
-  <mat-form-field class="example-full-width short-input">
-    <input matInput i18n-placeholder="@@min" placeholder="Min" formControlName="price_min" type="number">
-  </mat-form-field>
-  <mat-form-field class="example-full-width short-input">
-    <input matInput i18n-placeholder="@@max" placeholder="Max" formControlName="price_max" type="number">
-  </mat-form-field>
-  <small>DKK</small>
-
-
-  <br>
-
-  <mat-form-field class="example-full-width short-input">
-    <input matInput i18n-placeholder="@@min" placeholder="Min" formControlName="duration_min" type="number">
-  </mat-form-field>
-  <mat-form-field class="example-full-width short-input">
-    <input matInput i18n-placeholder="@@max" placeholder="Max" formControlName="duration_max" type="number">
-  </mat-form-field>
-  <small>Days</small>
-
-</form>
-      
+  <small class="copyright">All rights reserved!</small>
+  </div>
+</div>

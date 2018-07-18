@@ -20,17 +20,23 @@ export class SortingComponent implements OnInit {
 
   ngOnInit() {
      this.route.queryParams.subscribe(queryParams => {
+      let departure_airport = queryParams.departure_airport instanceof Array ? queryParams.departure_airport : queryParams.departure_airport ? [queryParams.departure_airport] : queryParams.departure_airport;
+      let providers = queryParams.providers instanceof Array ? queryParams.providers : queryParams.providers ? [queryParams.providers] : queryParams.providers;
+      
       this.params = {
-        number_of_persons: queryParams.number_of_persons,
-        departure_date: moment(queryParams.departure_date).format('YYYY-MM-DD'),
+        departure_airport: departure_airport, // array
+        departure_date: queryParams.departure_date,
         flexible_departure: queryParams.flexible_departure,
         destination: queryParams.destination,
         price_min: queryParams.price_min,
         price_max: queryParams.price_max,
         duration_min: queryParams.duration_min,
         duration_max: queryParams.duration_max,
+        providers: providers, // array
         order: queryParams.order
       }
+
+      
   });
 }
 

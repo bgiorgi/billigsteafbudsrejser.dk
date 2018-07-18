@@ -50,11 +50,9 @@ export class SidebarComponent implements OnInit {
   ngOnInit() {
     this.route.queryParams.subscribe(queryParams => {
       // initialize arrays for multiple selection
-      let departure_airport = queryParams.departure_airport instanceof Array ? queryParams.departure_airport : [queryParams.departure_airport];
-      let providers = queryParams.providers instanceof Array ? queryParams.providers : [queryParams.providers];
+      let departure_airport = queryParams.departure_airport instanceof Array ? queryParams.departure_airport : queryParams.departure_airport ? [queryParams.departure_airport] : queryParams.departure_airport;
+      let providers = queryParams.providers instanceof Array ? queryParams.providers : queryParams.providers ? [queryParams.providers] : queryParams.providers;
       
-      console.log(departure_airport);
-      console.log(providers);
 
       this.params = {
         departure_airport: departure_airport, // array
