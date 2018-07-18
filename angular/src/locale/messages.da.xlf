@@ -339,7 +339,22 @@
           <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
-
+      <trans-unit id="priceType" datatype="html">
+        <source>{tour.provider.price_type, select, per_person {per person} whole_tour {whole tour} }</source>
+        <target>{tour.provider.price_type, select, per_person {per person} whole_tour {hele tour} }</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/items/items.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="providers" datatype="html">
+        <source>Tour Providers</source>
+        <target>Turudbydere</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tour-list/sidebar/sidebar.component.ts</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
 
     </body>
   </file>

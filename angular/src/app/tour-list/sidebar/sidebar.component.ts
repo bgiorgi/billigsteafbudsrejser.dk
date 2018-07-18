@@ -6,7 +6,7 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import { DestinationsService } from '../shared/services/destinations.service';
-
+import { ProvidersService } from '../shared/services/providers.service';
 
 
 
@@ -24,6 +24,9 @@ export class SidebarComponent implements OnInit {
   // for autocomplete
   states: any;  
   filteredStates: Observable<any[]>;
+  
+  // providers
+  providers:any;
 
 
   
@@ -32,7 +35,8 @@ export class SidebarComponent implements OnInit {
     private route: ActivatedRoute, 
     private router: Router,
     private fb: FormBuilder,
-    private destinationsService: DestinationsService
+    private destinationsService: DestinationsService,
+    private providersService: ProvidersService
     ) {}
     
 
@@ -45,8 +49,15 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {
     this.route.queryParams.subscribe(queryParams => {
+      // initialize arrays for multiple selection
+      let departure_airport = queryParams.departure_airport instanceof Array ? queryParams.departure_airport : [queryParams.departure_airport];
+      let providers = queryParams.providers instanceof Array ? queryParams.providers : [queryParams.providers];
+      
+      console.log(departure_airport);
+      console.log(providers);
+
       this.params = {
-        departure_airport: queryParams.departure_airport,
+        departure_airport: departure_airport, // array
         departure_date: queryParams.departure_date,
         flexible_departure: queryParams.flexible_departure,
         destination: queryParams.destination,
@@ -54,8 +65,11 @@ export class SidebarComponent implements OnInit {
         price_max: queryParams.price_max,
         duration_min: queryParams.duration_min,
         duration_max: queryParams.duration_max,
+        providers: providers, // array
         order: queryParams.order
       }
+      console.log('thisparam');
+      console.log(this.params);
     });
 
   
@@ -66,9 +80,7 @@ export class SidebarComponent implements OnInit {
       // generate states
       this.destinationsService.getDestinations().subscribe(destinations => {
         this.states = destinations
-        console.log(this.states);
-      
-      
+
                 
     // for autocomplete
     this.filteredStates = this.form.get('destination').valueChanges
@@ -80,7 +92,8 @@ export class SidebarComponent implements OnInit {
       });
 
       
-      
+    // generate providers
+    this.providersService.getProviders().subscribe((data:any) => this.providers = data.data);
 
       
 
@@ -96,7 +109,8 @@ export class SidebarComponent implements OnInit {
           "price_min": this.params.price_min,
           "price_max": this.params.price_max,
           "duration_min": this.params.duration_min,
-          "duration_max": this.params.duration_max
+          "duration_max": this.params.duration_max,
+          "providers": [this.params.providers]
     });
   }
 
@@ -115,6 +129,7 @@ export class SidebarComponent implements OnInit {
         price_max: value.price_max,
         duration_min: value.duration_min,
         duration_max: value.duration_max,
+        providers: value.providers,
         order: this.params.order
     }
     if(queryParams.departure_date) queryParams.departure_date = moment(queryParams.departure_date).format('YYYY-MM-DD');

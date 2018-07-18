@@ -59,6 +59,7 @@
       <input matInput i18n-placeholder="@@max" placeholder="Max" formControlName="price_max" type="number">
     </mat-form-field>
     <small>DKK</small>
+    <br>
 
 
     <br>
@@ -71,15 +72,30 @@
     </mat-form-field>
     <small i18n="@@days">Days</small>
 
+<br>
+
+    <mat-form-field>
+      <mat-select i18n-placeholder="@@providers" placeholder="Tour Providers" formControlName="providers" multiple>
+        <mat-option *ngFor="let provider of providers" [value]="provider.code"><img [src]="provider.logo" style="max-height:15px; max-width:30px"> {{ provider.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    
+  
+    
+    
+    
   </form>
 
 </div>
 
 <div class="sidebar-footer">
-  <a href="/en" class="gray-text mr-2"><img style="width:15px" class="mr-1" src="http://aws-cf.imdoc.fr/prod/articles/3/5/0/5788350/4321013/big-432101389c.jpg?v=0"> <small>English</small></a>
-  <a href="/da" class="gray-text"><img style="width:15px" class="mr-1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Flag_of_Denmark.svg/20px-Flag_of_Denmark.svg.png"> <small>Dansk</small></a>
-  <br><br>
+  <div class="sidebar-footer-inner">
+  <a href="/en" class="gray-text mr-2"><img style="width:15px" class="mr-1" src="/assets/images/flag_en.jpg"> <small>English</small></a>
+  <a href="/da" class="gray-text"><img style="width:15px" class="mr-1" src="/assets/images/flag_da.png"> <small>Dansk</small></a>
+  <br>
   <small class="copyright">Copyright © 2018. billigsteafbudsrejser</small>
   <br>
   <small class="copyright">All rights reserved!</small>
+  </div>
 </div>

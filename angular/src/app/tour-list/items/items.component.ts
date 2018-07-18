@@ -43,9 +43,8 @@ export class ItemsComponent implements OnInit {
         duration_min: queryParams.duration_min,
         duration_max: queryParams.duration_max,
         order: queryParams.order,
-        provider_id: queryParams.provider_id
+        providers: JSON.stringify(queryParams.providers)
       }
-      
       this.searchTours();    
     });
       
@@ -57,7 +56,6 @@ export class ItemsComponent implements OnInit {
   // function for getting tours, which uses initialized service
   searchTours() {
     this.isLoading = true;  
-    console.log(this.params);
    this.itemsService.getTours(this.params)
   .subscribe((data:any) => { 
     this.tours = data;
@@ -78,7 +76,6 @@ export class ItemsComponent implements OnInit {
   
   
   onScroll() {
-    console.log('scrolled');
     if(this.tours) {
     let lastPage = this.tours.meta.last_page;
     if(lastPage>1 && lastPage==this.currentPage) this.openSnackBar();      
