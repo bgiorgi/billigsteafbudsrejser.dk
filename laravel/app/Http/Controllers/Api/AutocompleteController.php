@@ -13,7 +13,7 @@ class AutocompleteController extends Controller
 {
     public static function Destinations() {
         $data = array();
-        $destinations = Tour::select('city','country')->distinct('city')->get();
+        $destinations = Tour::select('city','country')->distinct('city')->whereNotNull('city')->whereNotNull('country')->get();
         // we need to asign add keys to cities and even keys to the countries, to show both options in autocomplete
         //cities
         $addKey = 0;
@@ -26,7 +26,7 @@ class AutocompleteController extends Controller
 
         // countries
                 $evenKey = 1;
-        $destinations = Tour::select('country')->distinct('country')->get();
+        $destinations = Tour::select('country')->distinct('country')->whereNotNull('country')->get();
         foreach($destinations as $destination) {
             $value = $destination->country;
             $displayValue = $destination->country;

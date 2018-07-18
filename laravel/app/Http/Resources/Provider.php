@@ -16,7 +16,10 @@ class Provider extends Resource
     {
         return [
             'id' => $this->id,
+            'name' => $this->name,
+            'code' => $this->code,
             'logo' => getenv('APP_URL').'/storage/'.$this->logo,
+            'price_type' => $this->price_type
         ];
     }
 }

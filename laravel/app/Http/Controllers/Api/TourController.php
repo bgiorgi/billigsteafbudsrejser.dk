@@ -51,6 +51,11 @@ class TourController extends Controller
         ->when($request->price_max,function($query) use($request) {
             return     $query->where('price','<',$request->price_max);
         }) 
+        ->when($request->providers, function($query) use ($request){
+                return $query->whereHas('provider',function($query) use($request) {
+                   $query->whereIn('code',json_decode($request->providers,1));
+                });
+        })        
         ->when($request->order && $request->order=='price',function($query) {
             return     $query->orderBy('price','asc');
         }) 
@@ -81,12 +86,10 @@ class TourController extends Controller
             }
             
             
-            
             // cheapest tours
             elseif($request->tourType=="cheapest")  {
                 return TourResource::collection(Tour::orderBy('price','asc')->limit(4)->get());
             }
-            
             
             
             // closest tours
