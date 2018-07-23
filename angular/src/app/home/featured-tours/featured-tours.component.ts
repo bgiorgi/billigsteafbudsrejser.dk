@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FeaturedToursService } from './featured-tours.service';
 import { environment } from '../../../environments/environment';
 
+
 @Component({
   selector: 'app-featured-tours',
   templateUrl: './featured-tours.component.html',
@@ -12,7 +13,7 @@ export class FeaturedToursComponent implements OnInit {
   // get tour type from home component
   @Input() tourType; // tour type: cheapest, closest, most popular
   @Input() tourOrder; // tour ordering
-  
+  z
   tours: any;
 
 
@@ -38,6 +39,9 @@ export class FeaturedToursComponent implements OnInit {
   // function for tour redirection  
   redirectUrl(tour_id) {
     return environment.apiUrl+'/redirect-tour/'+tour_id;
-  }    
+  }   
+  
+
+  
 
 }

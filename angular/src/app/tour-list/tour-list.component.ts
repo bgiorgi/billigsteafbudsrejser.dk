@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatBottomSheet } from '@angular/material';
 import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
 import { ActivatedRoute } from '@angular/router';
+import { SearchFormService } from '../shared/services/search-form.service';
 
 
 @Component({
@@ -10,14 +11,20 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./tour-list.component.scss']
 })
 export class TourListComponent implements OnInit {
-  params:any;
+  params:any = {};
 
   constructor(
     private bottomSheet: MatBottomSheet,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private searchFormService: SearchFormService
     ) {
-        this.route.queryParams.subscribe(queryParams => {
-        this.params = queryParams;  
+        this.route.queryParams.subscribe((queryParams:any) => {
+          if(queryParams.order) this.params.order = queryParams.order;
+          if(queryParams.destination) this.params.destination = queryParams.destination;
+          if(queryParams.providers) this.params.providers = [queryParams.providers];
+          
+        
+        this.searchFormService.changeCurrentParams(this.params);
     });
   }
   
@@ -28,11 +35,9 @@ export class TourListComponent implements OnInit {
   ngOnInit() {
   }
   
-  
-  receiveParams($event) {
-    this.params = $event;
-    console.log('params received');
-    console.log($event);
+  ngOnDestroy() {
+    this.searchFormService.deleteParams();
   }
-
+  
+  
 }

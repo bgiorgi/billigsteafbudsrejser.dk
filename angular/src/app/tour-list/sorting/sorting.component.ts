@@ -12,9 +12,10 @@ export class SortingComponent implements OnInit {
   
   constructor(private searchFormService: SearchFormService) { }
 
-  
+  order:string;
 
   ngOnInit() {
+    this.searchFormService.currentParams.subscribe((data:any) => this.order = data.order);
   }
 
   sortTours(order) {

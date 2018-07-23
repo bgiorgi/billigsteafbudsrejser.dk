@@ -19,7 +19,7 @@ class Tour extends Resource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'price' => $this->price,
+            'price' => adjustPrice($this->price,$this->provider_id),
             'currency' => $this->currency,
             'url' => $this->url,
             'image_url' => $this->image_url,
@@ -34,3 +34,15 @@ class Tour extends Resource
         ];
     }
 }
+
+
+     function adjustPrice($price,$provider_id) {
+        // Suncharter has per person price, other agencies have for 2 persons
+        if($provider_id!=1) {
+            $pricePerPerson = $price/2;
+        } else {
+            $pricePerPerson = $price;
+        }
+        
+        return $pricePerPerson;
+    }   

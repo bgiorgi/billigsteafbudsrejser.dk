@@ -1,6 +1,6 @@
 <div align="right" class="py-0 py-lg-4 sorting-container">
 <mat-form-field>
-  <mat-select i18n-placeholder="@@sortBy" placeholder="Sort By" #order (selectionChange)="sortTours(order.value)">
+  <mat-select i18n-placeholder="@@sortBy" placeholder="Sort By" #orderSelect (selectionChange)="sortTours(orderSelect.value)" [value]="order">
     <mat-option i18n="sort@@date" value="date">Date</mat-option>
     <mat-option i18n="sort@@price" value="price">Price</mat-option>
     <mat-option i18n="sort@@popularity" value="popularity">Popularity</mat-option>

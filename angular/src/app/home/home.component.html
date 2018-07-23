@@ -7,7 +7,7 @@
     <!--search form container-->
     <div class="container-fluid">
         <!--search form-->
-        <form action="tour-list" class="search-form w-100" method="get" (ngSubmit)="onSubmit()" [formGroup]="searchForm">
+        <form action="tour-list" class="search-form w-100" method="get" (ngSubmit)="goSearch(searchForm.value); searching = true;" [formGroup]="searchForm">
             <!--large inputs for destination and departure date-->
             <div fxLayout="row wrap" fxLayoutAlign="left" class="text-left  mb-2" fxLayout.xs="column" fxFlexFill>
                 <div class="px-2 py-2 float-left text-left" fxFlex="100">

@@ -79,7 +79,6 @@ export class SidebarComponent implements OnInit {
       
   }
   
-  
 
   
   
@@ -97,7 +96,7 @@ export class SidebarComponent implements OnInit {
       price_max: this.params.price_max,
       duration_min: this.params.duration_min,
       duration_max: this.params.duration_max,
-      providers: [this.providers]
+      providers: [this.params.providers]
     });
   }
 

@@ -16,9 +16,9 @@ class FetchApiController extends Controller
             // provider list
             $apiList = [
                 'SUNWEB'=>'http://pf.tradetracker.net/?aid=304736&encoding=utf-8&type=json&fid=919799&categoryType=2&additionalType=2', // sunweb.dk
-                'ELIZAGENERAL'=>'http://pf.tradetracker.net/?aid=304736&encoding=utf-8&type=json&fid=842636&categoryType=2&additionalType=2', // elizawashere.dk general
-                'ELIZAOFFER'=>'http://pf.tradetracker.net/?aid=304736&encoding=utf-8&type=json&fid=842636&categoryType=2&additionalType=2', // elizawashere.dk offer
-                'TRAVELBIRD'=>'http://pf.tradetracker.net/?aid=304736&encoding=utf-8&type=json&fid=1041339&categoryType=2&additionalType=2', // travelbird.dk
+                'ELIZAGENERAL'=>'http://pf.tradetracker.net/?aid=304736&encoding=utf-8&type=json&fid=842636&categoryType=2&additionalType=2', // elizawashere.dk general //excluded
+                'ELIZAOFFER'=>'http://pf.tradetracker.net/?aid=304736&encoding=utf-8&type=json&fid=842636&categoryType=2&additionalType=2', // elizawashere.dk offer //excluded
+                'TRAVELBIRD'=>'http://pf.tradetracker.net/?aid=304736&encoding=utf-8&type=json&fid=1041339&categoryType=2&additionalType=2', // travelbird.dk //excluded
                 'PRIMOTOURS'=>'http://pf.tradetracker.net/?aid=304736&encoding=utf-8&type=json&fid=1329114&categoryType=2&additionalType=2', // primotours.dk
                 'AARHUSCHARTER'=>'http://pf.tradetracker.net/?aid=304736&encoding=utf-8&type=json&fid=1329103&categoryType=2&additionalType=2', // aarhuscharter.dk
                 'SUNCHARTER'=>'http://pf.tradetracker.net/?aid=304736&encoding=utf-8&type=json&fid=1326662&categoryType=2&additionalType=2' // suncharter.dk

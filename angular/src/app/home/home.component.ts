@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import {FormGroup,FormBuilder } from '@angular/forms';
 import { SearchFormService } from '../shared/services/search-form.service';
+import {FormGroup,FormBuilder } from '@angular/forms';
+
 
 @Component({
   selector: 'app-home',
@@ -18,15 +19,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
-    this.searchFormService.currentParams.subscribe(test => { console.log('home currentParams'); console.log(test)}).unsubscribe();
   }
 
 
-  onSubmit() {
-    this.searching = true;
-    let values = this.searchForm.value;
-    console.log('home values');
-    console.log(values);
+  goSearch(values) {
     this.searchFormService.changeCurrentParams(values);
     this.router.navigate(['/tour-list']);
   }

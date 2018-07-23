@@ -21,6 +21,8 @@ export class ItemsComponent implements OnInit {
   isLoading = true;
   isAppending = false;
   
+  searchFormSubscription;
+  
   
   constructor(
     private itemsService: ItemsService,
@@ -29,12 +31,16 @@ export class ItemsComponent implements OnInit {
     ) {}
 
   ngOnInit() {
-    this.searchFormService.currentParams.subscribe(currentParams => {
+    this.searchFormSubscription = this.searchFormService.currentParams.subscribe(currentParams => {
       this.params = currentParams;
       this.searchTours();
     });
   }
 
+
+  ngOnDestroy() {
+    this.searchFormSubscription.unsubscribe();
+  }
   
 
 
