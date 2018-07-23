@@ -39,6 +39,8 @@ class FetchApiController extends Controller
 
             // insert tours
             foreach($apiArray['products'] as $apiTour) {
+                if(@$apiTour['properties']['accommodationType']==['Fly t/r']) continue;
+                
                 // TEMP
                 $i++;
                 //if($i==20) die('demo abort');

@@ -1,9 +1,11 @@
 <div fxLayout="row wrap" fxLayoutAlign="start center" class="text-left" fxLayout.xs="column" fxFlexFill>
     <div fxFlex.xs="100" fxFlex.sm="50" fxFlex.md="25" class="search-card-container my-4" *ngFor="let tour of tours?.data">
         <mat-card class="tour-card">
-            <a href="{{ redirectUrl(tour.id) }}" target="_blank">
+            <div class="tour-image-container">
+                <a href="{{ redirectUrl(tour.id) }}" target="_blank">
             <img mat-card-image src="{{ tour.image_url }}">
             </a>
+            </div>
             <div class="provider-logo mat-elevation-z1">
                 <img src="{{ tour.provider.logo }}">
             </div>
@@ -11,11 +13,11 @@
             <mat-card-content>
                 <p>
                     <span class="hotel" *ngIf="tour.departure_date && tour.duration">{{ tour.departure_date | date:"MMM d" }} +{{ tour.duration }} <ng-container i18n="@@dayPlural">{tour?.duration, select, 1 {day} other {days}}</ng-container></span>
-                    <span class="price">{{ tour.currency }} {{ tour.price }}</span>
+                    <span class="price">{{ tour.currency }} {{ tour.price }}<br><small class="float-right" i18n="@@priceType">{ tour?.provider.price_type, select, per_person {per person} whole_tour {whole tour}}</small></span>
                     <br>
                     <span class="destination">{{ tour.city }}</span>&nbsp;<span class="from">{{ tour.country }}</span> &nbsp; <span class="from" *ngIf="(tour.number_of_persons)">{{ tour.number_of_persons }} <ng-container i18n="@@personPlural">{tour.number_of_persons, select, 1 {person} other {persons}}</ng-container></span>
                     <br>
-                    <span class="hotel">{{ tour.name }}</span><span class="stars ml-2 font-thin" *ngIf="tour.stars">{{ tour.stars }}<mat-icon class="service-star">star</mat-icon></span>  
+                    <span class="hotel">{{ tour.name }}</span><span class="stars ml-2 font-thin" *ngIf="tour.stars">{{ tour.stars }}<mat-icon class="service-star">star</mat-icon></span>
                     <br>
                 </p>
             </mat-card-content>
@@ -23,4 +25,3 @@
     </div>
     <div class="w-100 text-right"><a class="black-text" routerLink="tour-list" [queryParams]="{order: tourOrder}"><small i18n>See All</small></a></div>
 </div>
-            

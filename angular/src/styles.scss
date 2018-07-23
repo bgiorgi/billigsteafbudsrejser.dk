@@ -34,9 +34,6 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 
 
 
-.mat-card {
-    padding: 0!important;
-}
 
 .tour-card {
 
@@ -79,12 +76,23 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 
 
 
+
+.service-star {
+  color: #FFC107;
+  font-size: .9rem;
+  top: .2rem;
+  position: relative;
+}
+
+
+
 .provider-logo {
     height: 50px;
     width: 50px;
     float: right;
     bottom: 50px;
     position: relative;
+    right:1rem;
     border-radius: 50%;
     overflow: hidden;
     background: white;
@@ -102,6 +110,14 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 }
 
 
+.tour-image-container {
+  height: 127px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+
+
 .search-button {
     font-size: .6rem;
     padding: 0 2rem;
@@ -110,9 +126,11 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 }
 
 
-.mat-card {
+.tour-card {
     box-shadow: none!important;
     line-height: 1.2rem;
+    padding: 1rem!important;
+    height: 240px;    
 }
 
 a {

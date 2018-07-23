@@ -327,9 +327,9 @@
         </context-group>
         <note priority="1" from="description">sort</note>
       </trans-unit>
-      <trans-unit id="departureAirport" datatype="html">
-        <source>Departure Airport</source>
-        <target>Afgang Lufthavn</target>
+      <trans-unit id="departureAirports" datatype="html">
+        <source>Departure Airports</source>
+        <target>Afgang Lufthavne</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/home/home.component.ts</context>
           <context context-type="linenumber">18</context>

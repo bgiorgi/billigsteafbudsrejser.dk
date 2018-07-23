@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import * as moment from 'moment';
+import {FormGroup,FormBuilder } from '@angular/forms';
+import { SearchFormService } from '../shared/services/search-form.service';
 
 @Component({
   selector: 'app-home',
@@ -9,24 +10,35 @@ import * as moment from 'moment';
 })
 export class HomeComponent implements OnInit {
 
-  params:any= {
-    departure_airport: ['Billund','Aalborg','Aarhus'],
-    flexible_departure:21
-  };
+  searchForm:FormGroup;
   searching = false; 
   
   
-  constructor(private router: Router) { }
+  constructor(private router: Router, private fb:FormBuilder,private searchFormService:SearchFormService) { }
 
   ngOnInit() {
+    this.createForm();
+    this.searchFormService.currentParams.subscribe(test => { console.log('home currentParams'); console.log(test)}).unsubscribe();
   }
 
 
   onSubmit() {
     this.searching = true;
-    if(this.params.departure_date) this.params.departure_date =  moment(this.params.departure_date).format('YYYY-MM-DD');
-    else this.params.flexible_departure = undefined;
-        this.router.navigate(['/tour-list'], { queryParams: this.params});
-
+    let values = this.searchForm.value;
+    console.log('home values');
+    console.log(values);
+    this.searchFormService.changeCurrentParams(values);
+    this.router.navigate(['/tour-list']);
   }
+  
+  
+  createForm() {
+    this.searchForm = this.fb.group({
+      departure_airports: [['Billund','Aalborg','Aarhus']],
+      departure_date: '',
+      flexible_departure: '21'
+    });
+  }
+  
+    
 }

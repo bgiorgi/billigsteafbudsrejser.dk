@@ -1,9 +1,11 @@
 <div fxLayout="row wrap" fxLayoutAlign="start center" class="text-left" fxLayout.xs="column" fxFlexFill>
     <div fxFlex="20" fxFlex.xs="100" fxFlex.sm="50" fxFlex.md="33" fxFlex.lg="25" class="search-card-container" *ngFor="let tour of tours?.data" [ngClass]="{ 'fade': isLoading }">
         <mat-card class="tour-card">
-            <a href="{{ redirectUrl(tour.id) }}" target="_blank">
+            <div class="tour-image-container">
+                <a href="{{ redirectUrl(tour.id) }}" target="_blank">
             <img mat-card-image src="{{ tour.image_url }}">
             </a>
+            </div>
             <div class="provider-logo mat-elevation-z1">
                 <img src="{{ tour.provider.logo }}">
             </div>
@@ -15,7 +17,7 @@
                     <br>
                     <span class="destination">{{ tour.city }}</span>&nbsp;<span class="from">{{ tour.country }}</span> &nbsp; <span class="from" *ngIf="(tour.number_of_persons)">{{ tour.number_of_persons }} <ng-container i18n="@@personPlural">{tour.number_of_persons, select, 1 {person} other {persons}}</ng-container></span>
                     <br>
-                    <span class="hotel">{{ tour.name }}</span><span class="stars ml-2 font-thin" *ngIf="tour.stars">{{ tour.stars }}<mat-icon class="service-star">star</mat-icon></span>  
+                    <span class="hotel">{{ tour.name }}</span><span class="stars ml-2 font-thin" *ngIf="tour.stars">{{ tour.stars }}<mat-icon class="service-star">star</mat-icon></span>
                     <br>
                 </p>
             </mat-card-content>
@@ -23,6 +25,10 @@
     </div>
 </div>
 
-<div *ngIf="tours?.data && !tours.data.length"><h1 i18n="@@nothingFound">Nothing Found</h1></div>
+<div *ngIf="tours?.data && !tours.data.length">
+    <h1 i18n="@@nothingFound">Nothing Found</h1>
+</div>
 <div infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()"></div>
-<div align="center"  *ngIf="isAppending"><mat-spinner></mat-spinner></div>
+<div align="center" *ngIf="isAppending">
+    <mat-spinner></mat-spinner>
+</div>

@@ -32,7 +32,6 @@ export class FeaturedToursComponent implements OnInit {
     searchTours() {
      this.featuredToursService.getTours({tourType:this.tourType})
     .subscribe((data:any) => this.tours = data);
-    console.log(this.tourType);
     }  
     
     

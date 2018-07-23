@@ -11,7 +11,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 // http client
 import { HttpClientModule } from '@angular/common/http';
 // forms module
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -35,7 +35,7 @@ import { ProvidersComponent } from './home/providers/providers.component';
     MatButtonModule, MatInputModule, MatIconModule,MatDatepickerModule,MatNativeDateModule,MatCardModule,MatSelectModule,MatListModule,
     FlexLayoutModule,
     HttpClientModule,
-    FormsModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

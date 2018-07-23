@@ -12,10 +12,25 @@ export class ItemsService {
     private http: HttpClient
     ) { }
   
-  toursUrl = environment.apiUrl+'/api/search-tours';
   
   getTours(params) {
-      Object.keys(params).forEach(key => params[key] === undefined ? delete params[key] : ''); // delete undefined keys
-      return this.http.get(this.toursUrl, {params: params});
+    
+      let queryParams = {
+        departure_date: params.departure_date,
+        departure_airports: JSON.stringify(params.departure_airports),
+        flexible_departure: params.flexible_departure,
+        destination: params.destination,
+        price_min: params.price_min,
+        price_max: params.price_max,
+        duration_min: params.duration_min,
+        duration_max: params.duration_max,
+        providers: JSON.stringify(params.providers),
+        order: params.order,
+        page: params.page
+      }    
+      
+      Object.keys(queryParams).forEach(key => !queryParams[key] ? delete queryParams[key] : ''); // delete undefined values
+    
+      return this.http.get(environment.apiUrl+'/api/search-tours', {params: queryParams});
     }
 }

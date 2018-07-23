@@ -6,7 +6,7 @@
 <div class="search-form-container">
   <small i18n="@@searchFilters" class="text-gray font-thin">Search Filters</small>
 
-  <form class="example-form" [formGroup]="form">
+  <form class="example-form" [formGroup]="searchForm">
 
 
     <mat-form-field>
@@ -18,7 +18,7 @@
     <br>
     
     <mat-form-field>
-      <mat-select i18n-placeholder="@@departureAirport" placeholder="Departure Airport" formControlName="departure_airport" multiple>
+      <mat-select i18n-placeholder="@@departureAirports" placeholder="Departure Airports" formControlName="departure_airports" multiple>
         <mat-option value="Billund">Billund</mat-option>
         <mat-option value="Aalborg">Aalborg</mat-option>
         <mat-option value="Aarhus">Aarhus</mat-option>
