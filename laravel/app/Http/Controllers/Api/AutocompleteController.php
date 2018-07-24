@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-
+use Response;
 use App\Tour;
 
 
@@ -34,7 +34,7 @@ class AutocompleteController extends Controller
             $evenKey++;
         }
         
-                echo json_encode($data);
+                return Response::json($data,200);
         
     }
 }

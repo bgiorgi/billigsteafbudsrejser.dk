@@ -55,7 +55,7 @@ export class BottomSheetComponent implements OnInit {
       this.params = data;
           this.createForm();
           this.valueChanges();          
-          });
+          }).unsubscribe();
 
       // generate states
       this.destinationsService.getDestinations().subscribe(destinations => {
