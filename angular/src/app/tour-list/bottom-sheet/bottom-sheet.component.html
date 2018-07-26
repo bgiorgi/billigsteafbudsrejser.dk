@@ -3,14 +3,6 @@
 
   <form class="example-form" [formGroup]="searchForm">
 
-
-    <mat-form-field>
-      <input matInput i18n-placeholder="@@departureDate" [matDatepicker]="picker" placeholder="Departure Date" (click)="picker.open()" formControlName="departure_date">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-
-    <br>
     
     <mat-form-field>
       <mat-select i18n-placeholder="@@departureAirports" placeholder="Departure Airports" formControlName="departure_airports" multiple>
@@ -20,9 +12,17 @@
       </mat-select>
     </mat-form-field>
     
-<br>
+    <br>
 
     <mat-form-field>
+      <input matInput i18n-placeholder="@@departureDate" [matDatepicker]="picker" placeholder="Departure Date" (click)="picker.open()" formControlName="departure_date" #departureDate>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field *ngIf="departureDate.value">
       <mat-select i18n-placeholder="@@flexibleDeparture" placeholder="Flexible Departure" formControlName="flexible_departure">
         <mat-option i18n="@@1week" value="7">1 Week</mat-option>
         <mat-option i18n="@@2weeks" value="14">2 Weeks</mat-option>
@@ -32,7 +32,7 @@
 
 
 
-    <br>
+    <br *ngIf="departureDate.value">
 
     <mat-form-field class="example-full-width">
       <input matInput i18n-placeholder="destination" placeholder="Destination" formControlName="destination" [matAutocomplete]="auto">
