@@ -23,8 +23,8 @@ export class SearchFormService {
       
   changeCurrentParams(data) {
     if(data.departure_date) data.departure_date = moment(data.departure_date).format('YYYY-MM-DD');
-    Object.keys(data).forEach(key => !data[key] ? delete data[key] : ''); // delete empty values
-    Object.keys(data).forEach(key => this.params[key] = data[key]);
+    Object.keys(data).forEach(key => this.params[key] = data[key]);    
+    Object.keys(data).forEach(key => !data[key] ? delete this.params[key] : ''); // delete empty values
     this.paramsSource.next(this.params);
   }        
   

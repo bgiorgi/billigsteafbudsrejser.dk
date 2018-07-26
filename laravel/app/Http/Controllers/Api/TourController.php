@@ -40,7 +40,7 @@ class TourController extends Controller
                return $query->where('duration','<',$request->duration_max);
         })  
         ->when(strlen($request->destination)>3,function($query) use($request) {
-            return    $query->where('country','like',"%$request->destination%")->orWhere('city','like',"%$request->destination%");
+            return    $query->whereRaw("(country like '%$request->destination%' AND city like '%$request->destination%')");
         })    
         ->when($request->price_min,function($query) use($request) {
              return    $query->where('price','>',$request->price_min);

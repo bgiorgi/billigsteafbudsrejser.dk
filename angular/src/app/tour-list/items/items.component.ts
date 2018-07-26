@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemsService } from './items.service';
-import { MatSnackBar } from '@angular/material';
 import { environment } from '../../../environments/environment';
 import { ActivatedRoute } from '@angular/router';
 import { SearchFormService } from '../../shared/services/search-form.service';
-import { SnackbarComponent } from './snackbar/snackbar.component';
+
 
 
 @Component({
@@ -20,13 +19,13 @@ export class ItemsComponent implements OnInit {
   currentPage:number = 1;
   isLoading = true;
   isAppending = false;
+  noMoreTours:boolean;
   
   searchFormSubscription;
   
   
   constructor(
     private itemsService: ItemsService,
-    public snackBar: MatSnackBar,
     private searchFormService: SearchFormService
     ) {}
 
@@ -59,7 +58,7 @@ export class ItemsComponent implements OnInit {
   onScroll() {
     if(this.tours) {
     let lastPage = this.tours.meta.last_page;
-    if(lastPage>1 && lastPage==this.currentPage) this.openSnackBar();      
+    if(lastPage>1 && lastPage==this.currentPage) this.noMoreTours = true;
     else if(this.currentPage < lastPage) {
       this.currentPage++;
       this.params.page = this.currentPage;    
@@ -80,12 +79,7 @@ export class ItemsComponent implements OnInit {
   
 
 
-  openSnackBar() {
-    this.snackBar.openFromComponent(SnackbarComponent, {
-      duration: 2000,
-    });
-  }
-  
+
   
   redirectUrl(tour_id) {
     return environment.apiUrl+'/redirect-tour/'+tour_id;

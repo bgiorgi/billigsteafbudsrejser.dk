@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { TourListRoutingModule } from './tour-list-routing.module';
 // material design    
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatIconModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatCardModule, MatDatepickerModule, MatNativeDateModule, MatSidenavModule, MatSelectModule, MatProgressSpinnerModule, MatBottomSheetModule, MatSnackBarModule, MatAutocompleteModule } from '@angular/material';
+import { MatIconModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatCardModule, MatDatepickerModule, MatNativeDateModule, MatSidenavModule, MatSelectModule, MatProgressSpinnerModule, MatBottomSheetModule, MatAutocompleteModule } from '@angular/material';
 // material flex layout
 import { FlexLayoutModule } from "@angular/flex-layout";
 // http client
@@ -18,7 +18,6 @@ import { TourListComponent } from './tour-list.component';
 import { ItemsComponent } from './items/items.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
-import { SnackbarComponent } from './items/snackbar/snackbar.component';
 import { SortingComponent } from './sorting/sorting.component';
 
 
@@ -28,7 +27,7 @@ import { SortingComponent } from './sorting/sorting.component';
     CommonModule,
     TourListRoutingModule,
     FormsModule,ReactiveFormsModule,  
-    MatIconModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatCardModule, MatDatepickerModule, MatNativeDateModule, MatSidenavModule, MatSelectModule, MatProgressSpinnerModule, MatBottomSheetModule, MatSnackBarModule, MatAutocompleteModule,
+    MatIconModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatCardModule, MatDatepickerModule, MatNativeDateModule, MatSidenavModule, MatSelectModule, MatProgressSpinnerModule, MatBottomSheetModule, MatAutocompleteModule,
     FlexLayoutModule,
     HttpClientModule,
     InfiniteScrollModule
@@ -38,12 +37,10 @@ import { SortingComponent } from './sorting/sorting.component';
     ItemsComponent,
     SidebarComponent,
     BottomSheetComponent,
-    SnackbarComponent,
     SortingComponent
     ],
   entryComponents: [
-    BottomSheetComponent,
-    SnackbarComponent
+    BottomSheetComponent
   ]
 })
 export class TourListModule { }
