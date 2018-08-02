@@ -22,6 +22,7 @@ export class SearchFormService {
   
       
   changeCurrentParams(data) {
+    if(this.params['page']) delete this.params['page']; // if data is coming from form or sorting and not from scroll    
     if(data.departure_date) data.departure_date = moment(data.departure_date).format('YYYY-MM-DD');
     Object.keys(data).forEach(key => this.params[key] = data[key]);    
     Object.keys(data).forEach(key => !data[key] ? delete this.params[key] : ''); // delete empty values

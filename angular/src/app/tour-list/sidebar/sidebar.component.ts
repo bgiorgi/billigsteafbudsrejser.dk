@@ -105,7 +105,7 @@ export class SidebarComponent implements OnInit {
 
   valueChanges() {
     this.searchForm.valueChanges.subscribe(values => {
-      this.searchFormService.deleteParams();
+      //this.searchFormService.deleteParams();
       this.searchFormService.changeCurrentParams(values);
       })
   }
