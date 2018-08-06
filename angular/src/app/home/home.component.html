@@ -101,8 +101,16 @@
     <!--popular destinations-->
 </div>
 
+<div class="container mt-4">
+<small class="gray-text font-thin extra-small" [innerHTML]="mainpageData?.bottom_text"></small>
+</div>
+
 
 <footer class="py-4">
+    <ul class="static-page-links">
+        <li *ngFor="let staticPage of staticPages"><a routerLink="{{ staticPage.slug }}">{{ staticPage.title }}</a></li>
+    </ul>
+    
     <a href="/en" class="gray-text mr-2"><img style="width:15px" class="mr-1" src="assets/images/flag_en.jpg"> <small>English</small></a>
     <a href="/da" class="gray-text"><img style="width:15px" class="mr-1" src="assets/images/flag_da.png"> <small>Dansk</small></a>
     <br><br>

@@ -19,6 +19,7 @@ import { HomeComponent } from './home/home.component';
 import { FeaturedToursComponent } from './home/featured-tours/featured-tours.component';
 import { PopularDestinationsComponent } from './home/popular-destinations/popular-destinations.component';
 import { ProvidersComponent } from './home/providers/providers.component';
+import { StaticPageComponent } from './static-page/static-page.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ProvidersComponent } from './home/providers/providers.component';
     HomeComponent,
     FeaturedToursComponent,
     PopularDestinationsComponent,
-    ProvidersComponent
+    ProvidersComponent,
+    StaticPageComponent
   ],
   imports: [
     BrowserModule,

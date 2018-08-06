@@ -72,8 +72,7 @@
               "outputPath": "dist/my-project-da/",
               "i18nFile": "src/locale/messages.da.xlf",
               "i18nFormat": "xlf",
-              "i18nLocale": "da",
-
+              "i18nLocale": "da"
             },
 
             "production-da": {
@@ -108,6 +107,9 @@
           "configurations": {
             "production": {
               "browserTarget": "angular:build:production"
+            },
+            "da": {
+              "browserTarget": "angular:build:da"
             }
           }
         },

@@ -40,7 +40,9 @@
 }
 
 
-
+.extra-small {
+    font-size:.7rem;
+}
 
 
 
@@ -56,6 +58,17 @@ footer {
         font-weight: 100;
         font-size: .6rem;
     }
+    
+    .static-page-links {
+        list-style-type:none;
+        padding:0;
+        a {
+            color:#333;
+            font-weight:800;
+            font-size:.7rem;
+        }
+    }
+    
 }
 
 
